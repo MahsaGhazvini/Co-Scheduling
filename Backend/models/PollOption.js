@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../utils/DBConnection');
-const PollFrom = require('./PollForm');
+const PollForm = require('./PollForm');
 
 const PollOption = sequelize.define('pollOption', {
     id:{
@@ -11,6 +11,6 @@ const PollOption = sequelize.define('pollOption', {
     description: Sequelize.STRING,
 });
 
-PollOption.belongsTo(PollFrom, {foreignKey: 'pollFrom', onDelete: 'CASCADE'});
+PollOption.belongsTo(PollForm, {foreignKey: 'pollFormId', onDelete: 'CASCADE'});
 
 module.exports = PollOption;
