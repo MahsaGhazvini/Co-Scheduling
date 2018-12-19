@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../utils/DBConnection');
-const PollFrom = require('./PollForm');
+const PollForm = require('./PollForm');
 const User = require('./User');
 
 const VotingRight = sequelize.define('votingRight', {
@@ -11,7 +11,7 @@ const VotingRight = sequelize.define('votingRight', {
     }
 });
 
-VotingRight.belongsTo(PollFrom, {foreignKey: 'pollFromId', onDelete: 'CASCADE'});
+VotingRight.belongsTo(PollForm, {foreignKey: 'pollFormId', onDelete: 'CASCADE'});
 VotingRight.belongsTo(User, {foreignKey: 'userId', onDelete: 'CASCADE'});
 
 module.exports = VotingRight;

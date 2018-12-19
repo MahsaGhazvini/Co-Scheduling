@@ -5,7 +5,7 @@ const managePolls = require('./managePolls');
 const vote = require('./vote');
 
 router.use('/createPoll', createPoll);
-// router.use('/managePolls', managePolls);
-// router.use('/vote', vote);
+router.use('/managePolls', managePolls);
+router.use('/vote', vote);
 
 module.exports = router;

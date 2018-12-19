@@ -10,28 +10,30 @@ router.get('/', function(req, res, next) {
     };
     VotingRight.findAll({
         where:{
-            id: req.query.email
+            userId: req.query.email
         }
     }).then(votingRights=>{
+        console.log(votingRights);
         votingRights.forEach(votingRight => {
-            let pollFormId = votingRight.pollFromId;
-            PollForm.findAll({
+            let pollFormId = votingRight.pollFormId;
+            console.log(votingRight);
+            PollForm.findOne({
                 where:{
                     id: pollFormId
                 }
             }).then(pollForm => {
+                console.log(pollForm.dataValues.description);
                 resJson.data.push({
                     id: pollFormId,
-                    title: pollForm.title,
-                    description: pollForm.description
+                    title: pollForm.dataValues.title,
+                    description: pollForm.dataValues.description
                 });
             })
         });
+        console.log("resssssss:");
+        console.log(resJson);
         res.status(200).json(resJson);
     });
-    console.log(resJson);
-    console.log(req.query.email);
-    return res;
 });
 
 module.exports = router;
