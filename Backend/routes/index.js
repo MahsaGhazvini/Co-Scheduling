@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var createPoll = require('./createPoll');
+var managePolls = require('./managePolls');
+var vote = require('./vote');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.use('/createPoll', createPoll);
+router.use('/managePolls', managePolls);
+router.use('/vote', vote);
 
 module.exports = router;
