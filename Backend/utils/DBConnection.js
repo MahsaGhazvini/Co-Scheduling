@@ -3,9 +3,9 @@ var Sequelize = require('sequelize');
 const path = require('path');
 const dbPath = path.resolve(__dirname, './../data/co_scheduling.db');
 
-var sequelize = new Sequelize('database', 'username', 'password', {
+var sequelize = new Sequelize('database', null, null, {
     host: 'localhost',
-    dialect: 'mssql',
+    dialect: 'sqlite',
 
     pool: {
         max: 5,
