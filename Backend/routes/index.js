@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var createPoll = require('./createPoll');
-var managePolls = require('./managePolls');
-var vote = require('./vote');
+const express = require('express');
+const router = express.Router();
+const createPoll = require('./createPoll');
+const managePolls = require('./managePolls');
+const vote = require('./vote');
 
 router.use('/createPoll', createPoll);
 router.use('/managePolls', managePolls);
