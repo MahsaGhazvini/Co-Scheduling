@@ -5,34 +5,36 @@ const VotingRight = require('../../models/VotingRight');
 const PollForm = require('../../models/PollForm');
 
 router.get('/', function(req, res, next) {
-    let resJson = {
+    let itemsProcessed = 0;
+    const resJson = {
         data: []
     };
+
     VotingRight.findAll({
         where:{
             userId: req.query.email
         }
-    }).then(votingRights=>{
-        console.log(votingRights);
-        votingRights.forEach(votingRight => {
-            let pollFormId = votingRight.pollFormId;
-            console.log(votingRight);
-            PollForm.findOne({
-                where:{
-                    id: pollFormId
-                }
-            }).then(pollForm => {
-                console.log(pollForm.dataValues.description);
-                resJson.data.push({
-                    id: pollFormId,
-                    title: pollForm.dataValues.title,
-                    description: pollForm.dataValues.description
+    }).then(async function(votingRights){
+        if(votingRights.length === 0)
+            res.status(200).json(resJson);
+        else {
+            await votingRights.forEach(async votingRight => {
+                let pollFormId = votingRight.pollFormId;
+                await PollForm.findOne({
+                    where: {
+                        id: pollFormId
+                    }
+                }).then(pollForm => {
+                    resJson.data.push({
+                        id: pollFormId,
+                        title: pollForm.dataValues.title,
+                        description: pollForm.dataValues.description
+                    });
                 });
-            })
-        });
-        console.log("resssssss:");
-        console.log(resJson);
-        res.status(200).json(resJson);
+                if(++itemsProcessed === votingRights.length)
+                    res.status(200).json(resJson);
+            });
+        };
     });
 });
 
