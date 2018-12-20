@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
                         return {
                             "id": option.pollOption.id,
                             "description": option.pollOption.description,
-                            "ourChoice": option.selected
+                            "ourChoice": option.states
                         };
                     })
                 })

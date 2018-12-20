@@ -9,9 +9,10 @@ const Vote = sequelize.define('vote', {
         primaryKey: true,
         autoIncrement: true,
     },
-    selected: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
+    states: {
+        type:   Sequelize.ENUM,
+        values: ['agree', 'disagree', 'notVoted'],
+        defaultValue: 'notVoted'
     }
 });
 
