@@ -16,6 +16,6 @@ const Vote = sequelize.define('vote', {
 });
 
 Vote.belongsTo(VotingRight, {foreignKey: 'votingRightId', onDelete: 'CASCADE'});
-Vote.belongsTo(PollOption, {foreignKey: 'poolOptionId', onDelete: 'CASCADE'});
+Vote.belongsTo(PollOption, {foreignKey: 'pollOptionId', onDelete: 'CASCADE'});
 
 module.exports = Vote;
