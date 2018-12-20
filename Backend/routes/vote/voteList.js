@@ -6,19 +6,14 @@ const PollForm = require('../../models/PollForm');
 
 router.get('/', function(req, res, next) {
     VotingRight.findAll({
-        where:{
-            userId: req.query.email
-        },
-        include:{
-            model: PollForm,
-            required: false,
-        }
+        where:{ userId: req.query.email },
+        include:{ model: PollForm, }
     }).then(function (result) {
         res.status(200).json(result.map(r=>{
             return {
                 "id": r.pollForm.dataValues.id,
                 "title": r.pollForm.dataValues.title,
-                "des": r.pollForm.dataValues.description
+                "description": r.pollForm.dataValues.description
             };
         }));
     });
