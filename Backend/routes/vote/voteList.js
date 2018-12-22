@@ -7,7 +7,12 @@ const PollForm = require('../../models/PollForm');
 router.get('/', function(req, res, next) {
     VotingRight.findAll({
         where:{ userId: req.query.email },
-        include:{ model: PollForm, }
+        include:{
+            model: PollForm,
+            where: {
+                active: true
+            }
+        }
     }).then(function (result) {
         res.status(200).json(result.map(r=>{
             return {
