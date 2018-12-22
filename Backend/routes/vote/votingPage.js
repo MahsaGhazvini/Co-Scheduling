@@ -7,9 +7,7 @@ const PollOption = require('../../models/PollOption');
 const Vote = require('../../models/Vote');
 
 router.get('/', function(req, res, next) {
-    PollForm.findOne({
-        where: { id: req.pollId }
-    }).then(form => {
+    PollForm.findById(req.pollId).then(form => {
         Vote.findAll({
             include:[{
                 model: PollOption,
