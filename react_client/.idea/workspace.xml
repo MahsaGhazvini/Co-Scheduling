@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15a0382a-4914-4ea8-a81c-d7410ff3de1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Common/DefaultNavbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Common/RequestMaker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HomePage/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/header.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
