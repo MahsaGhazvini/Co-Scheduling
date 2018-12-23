@@ -1,5 +1,6 @@
 .def-nav{
     margin-bottom: 0px;
+    height: 75px;
 }
 
 .navbar .default {
@@ -30,7 +31,7 @@
 }
 
 .navbar .default .logo-container .logo-text{
-    color: #2ed0cb;
+    /*color: #2ed0cb;*/
     margin-right: -10px;
     font-size: 20px;
     font-weight: bold;
