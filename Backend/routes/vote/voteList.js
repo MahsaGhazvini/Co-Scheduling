@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
         include:{
             model: PollForm,
             where: {
-                active: true
+                active: req.query.active
             }
         }
     }).then(function (result) {

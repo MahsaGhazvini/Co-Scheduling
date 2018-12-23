@@ -7,7 +7,7 @@ import PollList from './PollList';
 import './../Styles/common.css';
 import './../Styles/login.css';
 import './../Styles/listStyle.css';
-// http://localhost:3000/vote?email=aa@gmail.com
+
 class ListPage extends Component {
     constructor(){
         super()
@@ -17,7 +17,7 @@ class ListPage extends Component {
 
     componentWillMount(){
         const email = localStorage.getItem("email");
-        const searchLink = '/vote?email=' + email;
+        const searchLink = '/vote?email=' + email + '&active=1';
         Network.GetRequest(searchLink).then((res)=>{
             this.setState({pollsInfo: res});
         });
