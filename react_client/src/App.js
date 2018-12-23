@@ -10,7 +10,7 @@ const App = () =>
     <Router>
         <div>
             <Route exact path="/" component={HomePage}/>
-            <Route exact path="/listPage/:email" component={ListPage}/>
+            <Route exact path="/listPage" component={ListPage}/>
         </div>
     </Router>
 

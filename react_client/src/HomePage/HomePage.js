@@ -19,7 +19,8 @@ class HomePage extends Component {
     }
 
     sendInfo(event){
-        this.props.history.push({pathname: '/listPage/' + this.state.email});
+        localStorage.setItem("email", this.state.email);
+        this.props.history.push({pathname: '/listPage'});
     }
     render() {
         return (
