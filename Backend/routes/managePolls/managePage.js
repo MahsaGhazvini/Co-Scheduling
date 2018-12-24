@@ -26,6 +26,7 @@ router.get('/', function(req, res, next) {
                 if(dic[row.pollOption.id] === undefined)
                     dic[row.pollOption.id] = {
                         "description": row.pollOption.description,
+                        "isFinalized": row.pollOption.isFinalized,
                         "votes": {
                             "notVoted": 0,
                             "agree": 0,
@@ -38,6 +39,7 @@ router.get('/', function(req, res, next) {
                 "id": form.id,
                 "title": form.title,
                 "description": form.description,
+                "active": form.active,
                 "options": dic
             });
         });
