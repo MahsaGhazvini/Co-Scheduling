@@ -20,6 +20,7 @@
     "sequelize-cli": "^5.4.0",
     "sequelize-mocking": "^1.4.0",
     "sequelize-test-helpers": "^1.0.7",
+    "should": "^13.2.3",
     "sinon": "^7.2.2",
     "sqlite3": "^4.0.4",
     "tedious": "^3.0.1"

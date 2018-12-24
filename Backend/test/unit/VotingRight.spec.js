@@ -45,7 +45,7 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
             expect(votingRights).to.be.a('array');
             const preLen = votingRights.length;
 
-            await DBUtil.createVotingRight({id: 1}, {email: "hayerisadegh@gmail.com"});
+            await DBUtil.createVotingRight({id: 1}, {email: "sahar.rajabi@gmail.com"});
             const newVotingRights = await DBUtil.getAllVotingRights();
             const newLen = newVotingRights.length;
             expect(newLen).to.be.equal(preLen+1);

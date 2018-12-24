@@ -1,6 +1,5 @@
 const request = require('supertest')(require('./../../../app'));
 
-// const expect = require('chai').expect;
 const sinon = require('sinon');
 const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
@@ -9,7 +8,6 @@ describe('POST /managePolls/:id/:pollOptionId', function () {
 
     const Database = require('../../../utils/DBConnection');
 
-    // Basic configuration: create a sinon sandbox for testing
     let sandbox = null;
 
     beforeEach(function () {
@@ -20,7 +18,6 @@ describe('POST /managePolls/:id/:pollOptionId', function () {
         sandbox && sandbox.restore();
     });
 
-    // Load fake data for the votes
     sequelizeMockingMocha(
         Database,
         [

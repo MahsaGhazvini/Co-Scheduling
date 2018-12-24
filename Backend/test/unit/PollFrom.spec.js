@@ -44,7 +44,7 @@ describe('PollForm - PollFormService (using sequelizeMockingMocha) - ', function
             expect(polls).to.be.a('array');
             const preLen = polls.length;
 
-            await DBUtil.createPoll("4th poll", "to test", {email:"hayerisadegh@gmail.com"});
+            await DBUtil.createPoll("4th poll", "to test", {email:"sahar.rajabi@gmail.com"});
             const newPolls = await DBUtil.getAllPolls();
             const newLen = newPolls.length;
             expect(newLen).to.be.equal(preLen+1);

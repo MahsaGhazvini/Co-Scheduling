@@ -12,9 +12,29 @@
   {
     "model": "pollForm",
     "data": {
+      "id": 3,
+      "title": "third poll",
+      "description": "a poll to test",
+      "activate": true,
+      "creator": "saharsamr@gmail.com"
+    }
+  },
+  {
+    "model": "pollForm",
+    "data": {
       "id": 2,
       "title": "second poll",
-      "description": "a poll to test again",
+      "description": "a poll to test",
+      "activate": false,
+      "creator": "saharsamr@gmail.com"
+    }
+  },
+  {
+    "model": "pollForm",
+    "data": {
+      "id": 4,
+      "title": "forth poll",
+      "description": "a poll to test",
       "activate": false,
       "creator": "saharsamr@gmail.com"
     }
