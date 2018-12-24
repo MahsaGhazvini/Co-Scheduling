@@ -9,6 +9,7 @@ const PollOption = sequelize.define('pollOption', {
         autoIncrement: true,
     },
     description: Sequelize.STRING,
+    finalChoosen: Sequelize.Boolean
 });
 
 PollOption.belongsTo(PollForm, {foreignKey: 'pollFormId', onDelete: 'CASCADE'});
