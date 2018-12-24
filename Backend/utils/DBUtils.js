@@ -17,12 +17,22 @@ async function createUser(email) {
         });
 }
 
+async function getAllUsers() {
+    const users = await User.findAll();
+    return users.map(user => user.dataValues);
+}
+
 async function createPoll(title, description, creator) {
     return await PollForm.create({
         title: title,
         description: description,
         creator: creator.email
     });
+}
+
+async function getAllPolls() {
+    const polls = await PollForm.findAll();
+    return polls.map(polls => polls.dataValues);
 }
 
 async function createVotingRight(poll, member) {
@@ -40,6 +50,16 @@ async function createPollOption(option, poll) {
     });
 }
 
+async function getAllVotingRights() {
+    const votingRights = await VotingRight.findAll();
+    return votingRights.map(votingRights => votingRights.dataValues);
+}
+
+async function getAllPollOptions() {
+    const pollOptions = await PollOption.findAll();
+    return pollOptions.map(pollOptions => pollOptions.dataValues);
+}
+
 async function createVote(votingRight, option){
     return await Vote.create({
         votingRightId: votingRight.id,
@@ -47,10 +67,20 @@ async function createVote(votingRight, option){
     });
 }
 
+async function getAllVotes() {
+    const votes = await Vote.findAll();
+    return votes.map(votes => votes.dataValues);
+}
+
 module.exports = {
     createUser: createUser,
+    getAllUsers: getAllUsers,
     createPoll: createPoll,
+    getAllPolls: getAllPolls,
     createVotingRight: createVotingRight,
+    getAllVotingRights: getAllVotingRights,
     createPollOption: createPollOption,
+    getAllPollOptions: getAllPollOptions,
     createVote: createVote,
+    getAllVotes: getAllVotes,
 };
