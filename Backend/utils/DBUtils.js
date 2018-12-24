@@ -36,7 +36,7 @@ async function createVotingRight(poll, member) {
 async function createPollOption(option, poll) {
     return await PollOption.create({
         description: option.title,
-        pollForm: poll.id
+        pollFormId: poll.id
     });
 }
 

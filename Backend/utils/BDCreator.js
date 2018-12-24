@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const PollFrom = require('../models/PollForm');
+const PollForm = require('../models/PollForm');
 const PollOption = require('../models/PollOption');
 const VotingRight = require('../models/VotingRight');
 const Vote = require('../models/Vote');
@@ -10,8 +10,8 @@ User.sync().then(function(){
     console.log(err);
 });
 
-PollFrom.sync().then(function(){
-    console.log('pollFrom table created')
+PollForm.sync().then(function(){
+    console.log('pollForm table created')
 }).error(function(error){
     console.log(err);
 });

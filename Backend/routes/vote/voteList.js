@@ -5,33 +5,23 @@ const VotingRight = require('../../models/VotingRight');
 const PollForm = require('../../models/PollForm');
 
 router.get('/', function(req, res, next) {
-    let resJson = {
-        data: []
-    };
     VotingRight.findAll({
-        where:{
-            id: req.query.email
+        where:{ userId: req.query.email },
+        include:{
+            model: PollForm,
+            where: {
+                active: req.query.active
+            }
         }
-    }).then(votingRights=>{
-        votingRights.forEach(votingRight => {
-            let pollFormId = votingRight.pollFromId;
-            PollForm.findAll({
-                where:{
-                    id: pollFormId
-                }
-            }).then(pollForm => {
-                resJson.data.push({
-                    id: pollFormId,
-                    title: pollForm.title,
-                    description: pollForm.description
-                });
-            })
-        });
-        res.status(200).json(resJson);
+    }).then(function (result) {
+        res.status(200).json(result.map(r=>{
+            return {
+                "id": r.pollForm.dataValues.id,
+                "title": r.pollForm.dataValues.title,
+                "description": r.pollForm.dataValues.description
+            };
+        }));
     });
-    console.log(resJson);
-    console.log(req.query.email);
-    return res;
 });
 
 module.exports = router;

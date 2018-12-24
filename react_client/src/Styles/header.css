@@ -1,0 +1,47 @@
+.def-nav{
+    margin-bottom: 0px;
+    height: 75px;
+}
+
+.navbar .default {
+    height:80px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8%;
+    padding-left: 8%;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0px;
+    background-color: white;
+    z-index: 25;
+    margin-bottom: 0px;
+}
+
+.navbar .default .logo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .default .logo-container .logo{
+    height:100px;
+    animation: App-logo-spin infinite 20s linear;
+}
+
+.navbar .default .logo-container .logo-text{
+    /*color: #2ed0cb;*/
+    margin-right: -10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -9,7 +9,11 @@ const PollForm = sequelize.define('pollForm', {
         autoIncrement: true,
     },
     title: Sequelize.STRING,
-    description: Sequelize.STRING
+    description: Sequelize.STRING,
+    active:{
+        type: Sequelize.BOOLEAN,
+        defaultValue: true
+    }
 });
 
 PollForm.belongsTo(User, {foreignKey: 'creator', onDelete: 'CASCADE'});

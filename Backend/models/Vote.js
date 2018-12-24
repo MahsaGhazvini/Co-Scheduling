@@ -9,13 +9,14 @@ const Vote = sequelize.define('vote', {
         primaryKey: true,
         autoIncrement: true,
     },
-    selected: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false
+    states: {
+        type:   Sequelize.ENUM,
+        values: ['agree', 'disagree', 'notVoted'],
+        defaultValue: 'notVoted'
     }
 });
 
 Vote.belongsTo(VotingRight, {foreignKey: 'votingRightId', onDelete: 'CASCADE'});
-Vote.belongsTo(PollOption, {foreignKey: 'poolOptionId', onDelete: 'CASCADE'});
+Vote.belongsTo(PollOption, {foreignKey: 'pollOptionId', onDelete: 'CASCADE'});
 
 module.exports = Vote;

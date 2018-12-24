@@ -1,0 +1,15 @@
+*{
+    font-family: Shabnam;
+    text-align: right;
+    direction: rtl;
+}
+
+.body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content{
+    flex: 1;
+}
