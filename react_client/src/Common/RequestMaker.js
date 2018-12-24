@@ -4,6 +4,9 @@ export function GetRequest(url){
         'Content-Type':'aplication/json; charset=utf-8',
     }
 
+    if(localStorage.getItem("token"))
+        headers["token"] = localStorage.getItem("token");
+
     return fetch(url,
         {
             method:'GET',
@@ -26,6 +29,9 @@ export function PostRequest(url, data){
         'Accept':"aplication/json",
         'Content-Type':'application/x-www-form-urlencoded; charset=utf-8',
     }
+
+    if(localStorage.getItem("token"))
+        headers["token"] = localStorage.getItem("token");
 
     return fetch(url,
         {
