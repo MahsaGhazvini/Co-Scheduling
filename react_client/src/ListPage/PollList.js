@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import PollShow from './PollShow';
 
 class PollList extends Component {
+    // constructor(){
+    //     super()
+    //     if(this.props.pollsInfo.length === 0)
+    //         document.getElementById('more-info title').style.display = 'none'
+    //
+    // }
     render() {
         let pollsInfo = this.props.pollsInfo;
         const items = [];
@@ -12,8 +18,7 @@ class PollList extends Component {
         }
         return (
             <div className="more-info">
-                <span className="title">برای ورود به صفحه‌ی هر نظرسنجی روی آن کلیک کنید</span>
-
+                <span className="title" style={{display: (this.props.pollsInfo.length === 0)? 'none': 'flex'}}>{this.props.message}</span>
                 <div className="row">
                     {items}
                 </div>
