@@ -23,7 +23,6 @@ router.get('/', function(req, res, next) {
                 res.send(403);
             let dic = {};
             await votes.rows.forEach((row,i) => {
-                console.log("*******",row.pollOption.id, dic[row.pollOption.id]);
                 if(dic[row.pollOption.id] === undefined)
                     dic[row.pollOption.id] = {
                         "description": row.pollOption.description,
