@@ -46,6 +46,7 @@ class ListPage extends Component {
                     <PollList pollsInfo={this.state.deactivatePollsInfo} message={"...نظرسنجی‌های غیرفعال..."}/>
                     <PollList pollsInfo={this.state.manageActivatePollsInfo} message={"برای ورود به صفحه‌ی مدیریت هر نظرسنجی فعال روی آن کلیک کنید"}/>
                     <PollList pollsInfo={this.state.manageDeactivatePollsInfo} message={"...مدیریت نظرسنجی‌های غیرفعال..."}/>
+                    <div className="container col-md-6 col-md-offset-3 add-poll"><a href="/addPoll">ایجاد نظرسنجی جدید</a></div>
                 </div>
             </div>
         );

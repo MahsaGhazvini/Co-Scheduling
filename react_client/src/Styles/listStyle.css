@@ -57,3 +57,18 @@ p {
     flex: 1 1 auto;
     padding: 1.25rem;
 }
+
+.add-poll{
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 80px rgba(0,0,0,0.1);
+    color:white;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 10px;
+}
+
+.add-poll a{
+    color: white;
+    text-decoration: none;
+}
