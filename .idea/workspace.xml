@@ -321,6 +321,22 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="PollOption - PollOptionService (using sequelizeMockingMocha) - .the service shall exist" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Backend/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/Backend/test/unit/models/Vote.spec.js</test-file>
+      <test-names>
+        <name value="PollOption - PollOptionService (using sequelizeMockingMocha) - " />
+        <name value="the service shall exist" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="PollOption - PollOptionService (using sequelizeMockingMocha) - " type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -336,28 +352,13 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="User - UserService (using sequelizeMockingMocha) -  (1)" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <mocha-package>$PROJECT_DIR$/Backend/node_modules/mocha</mocha-package>
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/Backend/test/unit/models/User.spec.js</test-file>
-      <test-names>
-        <name value="User - UserService (using sequelizeMockingMocha) - " />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Mocha.PollOption - PollOptionService (using sequelizeMockingMocha) -  (2)" />
+        <item itemvalue="Mocha.PollOption - PollOptionService (using sequelizeMockingMocha) - .the service shall exist" />
         <item itemvalue="Mocha.PollOption - PollOptionService (using sequelizeMockingMocha) -  (1)" />
         <item itemvalue="Mocha.PollOption - PollOptionService (using sequelizeMockingMocha) - " />
         <item itemvalue="Mocha.PollForm - PollFormService (using sequelizeMockingMocha) - " />
-        <item itemvalue="Mocha.User - UserService (using sequelizeMockingMocha) -  (1)" />
       </list>
     </recent_temporary>
   </component>
