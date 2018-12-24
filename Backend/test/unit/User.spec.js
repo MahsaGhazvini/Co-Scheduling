@@ -6,8 +6,8 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 
 describe('User - UserService (using sequelizeMockingMocha) - ', function () {
-    const Database = require('./../../../utils/DBConnection');
-    const DBUtil = require('../../../utils/DBUtils');
+    const Database = require('../../utils/DBConnection');
+    const DBUtil = require('../../utils/DBUtils');
 
     // Basic configuration: create a sinon sandbox for testing
     let sandbox = null;
@@ -38,7 +38,7 @@ describe('User - UserService (using sequelizeMockingMocha) - ', function () {
 
         it('shall returns all users', async function () {
             const users = await DBUtil.getAllUsers();
-            expect(users).to.be.a('array');        m
+            expect(users).to.be.a('array');
             const preLen = users.length;
 
             await DBUtil.createUser("fake@fake.com");

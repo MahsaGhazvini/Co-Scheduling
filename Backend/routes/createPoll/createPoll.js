@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', async function createPoll(req, res){
-    console.log(JSON.stringify(req.body));
     const creator = req.body.creator;
     const title = req.body.title;
     const description = req.body.description;

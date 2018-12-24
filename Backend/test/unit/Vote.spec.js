@@ -6,8 +6,8 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 
 describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', function () {
-    const Database = require('./../../../utils/DBConnection');
-    const DBUtil = require('../../../utils/DBUtils');
+    const Database = require('../../utils/DBConnection');
+    const DBUtil = require('../../utils/DBUtils');
 
     // Basic configuration: create a sinon sandbox for testing
     let sandbox = null;
@@ -20,12 +20,15 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
         sandbox && sandbox.restore();
     });
 
-    // Load fake data for the pollOptions
+    // Load fake data for the votes
     sequelizeMockingMocha(
         Database,
         [
+            path.resolve(path.join(__dirname, './fakeData/users.json')),
             path.resolve(path.join(__dirname, './fakeData/pollForms.json')),
+            path.resolve(path.join(__dirname, './fakeData/votingRights.json')),
             path.resolve(path.join(__dirname, './fakeData/pollOptions.json')),
+            path.resolve(path.join(__dirname, './fakeData/votes.json')),
         ],
         { 'logging': false }
     );
@@ -34,19 +37,19 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
         expect(DBUtil).to.exist;
     });
 
-    describe('create poll option ', function () {
+    describe('create vote ', function () {
         it('exist', function () {
-            expect(DBUtil.createPollOption).to.exist;
+            expect(DBUtil.createVote).to.exist;
         });
 
-        it('shall returns all poll options', async function () {
-            const pollOptions = await DBUtil.getAllPollOptions();
-            expect(pollOptions).to.be.a('array');
-            const preLen = pollOptions.length;
+        it('shall returns all voting rights', async function () {
+            const votes = await DBUtil.getAllVotes();
+            expect(votes).to.be.a('array');
+            const preLen = votes.length;
 
-            await DBUtil.createPollOption({title: "first option"}, {id: 1});
-            const newPollOptions = await DBUtil.getAllPollOptions();
-            const newLen = newPollOptions.length;
+            await DBUtil.createVote({id: 2}, {id: 2});
+            const newVote = await DBUtil.getAllVotes();
+            const newLen = newVote.length;
             expect(newLen).to.be.equal(preLen+1);
         });
     });
