@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
-import * as Network from "../Common/RequestMaker";
+// import * as Network from "../Common/RequestMaker";
 
 //const request = require('request');
 
