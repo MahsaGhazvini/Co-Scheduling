@@ -1,0 +1,20 @@
+[
+  {
+    "model": "pollForm",
+    "data": {
+      "id": 1,
+      "title": "first poll",
+      "description": "a poll to test",
+      "activate": true
+    }
+  },
+  {
+    "model": "pollForm",
+    "data": {
+      "id": 2,
+      "title": "second poll",
+      "description": "a poll to test again",
+      "activate": false
+    }
+  }
+]
