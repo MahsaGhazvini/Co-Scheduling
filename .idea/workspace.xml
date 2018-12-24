@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f55535ec-44b2-4bcb-8862-fc87191c580e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/react_client/src/Vote/OptionShow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react_client/src/Vote/OptionsList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react_client/src/Vote/Vote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/routes/vote/votingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/vote/votingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/Frontend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/react_client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/AddPoll/AddPoll.js" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/AddPoll/AddPoll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/ListPage/ListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/ListPage/ListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/ListPage/PollList.js" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/ListPage/PollList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/ListPage/PollShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/ListPage/PollShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react_client/src/Styles/listStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/react_client/src/Styles/listStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test/routes/managePolls/manageList.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test/routes/managePolls/pollDetail.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/test/unit/fakeData/pollForms.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/test/unit/fakeData/pollForms.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,116 +15,85 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/ListPage/PollList.js">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/VotingRight.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="396">
+              <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/ListPage/ListPage.js">
+        <entry file="file://$PROJECT_DIR$/Backend/routes/managePolls/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/ListPage/PollShow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <marker date="1545677015054" expanded="true" signature="126:235" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="306">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/react_client/src/Vote/Vote.js">
+        <entry file="file://$PROJECT_DIR$/Backend/test/routes/managePolls/manageList.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <marker date="1545684884929" expanded="true" signature="1356:1438" ph="..." />
-              </folding>
+            <state relative-caret-position="124">
+              <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/Vote/OptionsList.js">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/pollForms.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/react_client/src/Vote/OptionShow.js">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/pollOptions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="14" selection-start-line="11" selection-start-column="11" selection-end-line="12" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/users.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+            <state relative-caret-position="68">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/votes.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9390">
-              <caret line="626" column="10" selection-start-line="626" selection-start-column="10" selection-end-line="626" selection-end-column="10" />
+            <state relative-caret-position="119">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/votingRights.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -185,6 +133,8 @@
         <option value="$PROJECT_DIR$/react_client/src/Vote/OptionsList.js" />
         <option value="$PROJECT_DIR$/react_client/src/Vote/OptionShow.js" />
         <option value="$PROJECT_DIR$/react_client/src/Vote/Vote.js" />
+        <option value="$PROJECT_DIR$/Backend/test/unit/fakeData/pollForms.json" />
+        <option value="$PROJECT_DIR$/Backend/test/routes/managePolls/manageList.spec.js" />
       </list>
     </option>
   </component>
@@ -192,7 +142,9 @@
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -208,37 +160,76 @@
             <path>
               <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="react_client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="react_client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="react_client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="ListPage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="managePolls" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="react_client" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Vote" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="createPoll" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="routes" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="managePolls" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="unit" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="fakeData" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Backend" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="utils" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -271,16 +262,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/Backend/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/react_client/src/assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/react_client/src" />
       <recent name="$PROJECT_DIR$/react_client" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/react_client/src/assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,11 +287,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Mocha.GET /managePolls/">
     <configuration name="BDCreator.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Backend/utils/BDCreator.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="DBConnection.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Backend/utils/DBConnection.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -322,12 +311,43 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="GET /managePolls/" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Backend/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/Backend/test/routes/managePolls/manageList.spec.js</test-file>
+      <test-names>
+        <name value="GET /managePolls/" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="GET /managePolls/:id" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Backend/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/Backend/test/routes/managePolls/pollDetail.js</test-file>
+      <test-names>
+        <name value="GET /managePolls/:id" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.GET /managePolls/" />
+        <item itemvalue="Mocha.GET /managePolls/:id" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="Node.js.BDCreator.js" />
-        <item itemvalue="Node.js.DBConnection.js" />
       </list>
     </recent_temporary>
   </component>
@@ -350,8 +370,37 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="GET__managePolls__id - 2018.12.25 at 00h 39m 46s.xml">
+      <configuration name="GET /managePolls/:id" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 49m 08s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 49m 33s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 52m 44s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 53m 16s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 55m 14s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 55m 54s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 00h 56m 12s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="GET__managePolls_ - 2018.12.25 at 01h 00m 16s.xml">
+      <configuration name="GET /managePolls/" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27087000" />
+    <option name="totallyTimeSpent" value="28442000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,15 +412,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17962629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17843866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29285714" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34437087" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,34 +456,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/react_client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react_client/src/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react_client/src/Styles/button.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react_client/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/react_client/src/assets/pattern.jpg" />
-    <entry file="file://$PROJECT_DIR$/react_client/src/assets/pattern2.jpg" />
     <entry file="file://$PROJECT_DIR$/react_client/src/assets/pattern7.jpeg" />
     <entry file="file://$PROJECT_DIR$/react_client/src/assets/Pattern3.jpg" />
     <entry file="file://$PROJECT_DIR$/react_client/src/assets/pattern4.jpeg" />
@@ -696,13 +717,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/react_client/src/Vote/Options.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/react_client/src/Vote/Options.js" />
     <entry file="file://$PROJECT_DIR$/react_client/src/ListPage/PollList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -759,6 +774,44 @@
             <element signature="e#0#41#0" expanded="true" />
             <marker date="1545684884929" expanded="true" signature="1356:1438" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/test/unit/VotingRight.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/routes/managePolls/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/test/routes/managePolls/pollDetail.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="53" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/models/PollForm.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/test/unit/fakeData/pollForms.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/test/routes/managePolls/manageList.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="56" column="37" selection-start-line="56" selection-start-column="37" selection-end-line="56" selection-end-column="37" />
         </state>
       </provider>
     </entry>

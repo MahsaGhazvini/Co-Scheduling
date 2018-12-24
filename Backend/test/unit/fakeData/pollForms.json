@@ -5,7 +5,7 @@
       "id": 1,
       "title": "first poll",
       "description": "a poll to test",
-      "activate": true,
+      "active": true,
       "creator": "saharsamr@gmail.com"
     }
   },
@@ -15,7 +15,7 @@
       "id": 3,
       "title": "third poll",
       "description": "a poll to test",
-      "activate": true,
+      "active": true,
       "creator": "saharsamr@gmail.com"
     }
   },
@@ -25,7 +25,7 @@
       "id": 2,
       "title": "second poll",
       "description": "a poll to test",
-      "activate": false,
+      "active": false,
       "creator": "saharsamr@gmail.com"
     }
   },
@@ -35,7 +35,7 @@
       "id": 4,
       "title": "forth poll",
       "description": "a poll to test",
-      "activate": false,
+      "active": false,
       "creator": "saharsamr@gmail.com"
     }
   }

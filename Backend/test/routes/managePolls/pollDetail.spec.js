@@ -5,7 +5,7 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 const should = require('should')
 
-describe('GET /managePolls/', function () {
+describe('GET /managePolls/:id', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -35,41 +35,20 @@ describe('GET /managePolls/', function () {
         res.body.should.have.property("id", "title", "description", "options");
     };
 
-    it('should return list of deactive polls', function(done) {
+    it('should return list of active or closed polls', function(done) {
         request
-            .get('/managePolls?email=saharsamr@gmail.com&active=0')
+            .get('/managePolls/2?email=saharsamr@gmail.com&active=0')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function(err, res) {
                 if (err) return done(err);
-                console.log(res.body)
-                // res.body.should.be.a('array');
-                if (res.body.length > 0){
-                    res.body[0].should.have.property("id");
-                    res.body[0].should.have.property("title");
-                    res.body[0].should.have.property("description");
-                }
+                res.body.should.have.property("id");
+                res.body.should.have.property("description");
+                res.body.should.have.property("title");
+                res.body.should.have.property("options");
+                res.body.should.have.property("active");
                 done();
-            });
-    });
-
-    it('should return list of active polls', function(done) {
-        request
-            .get('/managePolls?email=saharsamr@gmail.com&active=1')
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-            .expect(200)
-            .end(function(err, res) {
-                if (err) return done(err);
-                console.log(res.body)
-                // res.body.should.be.a('array');
-                if (res.body.length > 0){
-                    res.body[0].should.have.property("id");
-                    res.body[0].should.have.property("title");
-                    res.body[0].should.have.property("description");
-                }
-                done();
-            });
+        });
     });
 });
