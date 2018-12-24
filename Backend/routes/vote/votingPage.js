@@ -24,6 +24,7 @@ router.get('/', function(req, res, next) {
                     "id": form.id,
                     "title": form.title,
                     "description": form.description,
+                    "active": form.active,
                     "options": options.map(option => {
                         return {
                             "id": option.pollOption.id,

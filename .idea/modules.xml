@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/react_client.iml" filepath="$PROJECT_DIR$/.idea/react_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Co-Scheduling.iml" filepath="$PROJECT_DIR$/.idea/Co-Scheduling.iml" />
     </modules>
   </component>
 </project>
