@@ -16,27 +16,32 @@ router.get('/', function(req, res, next) {
                 }
             },
             group: ['vote.pollOptionId','vote.states']
-        }).then(votes => {
+        }).then(async votes => {
             if(form === null || votes.length === 0)
                 res.send(404);
             if(form.creator !== req.query.email)
                 res.send(403);
+            let dic = {};
+            await votes.rows.forEach((row,i) => {
+                if(dic[row.pollOption.id] === undefined)
+                    dic[row.pollOption.id] = {
+                        "description": row.pollOption.description,
+                        "isFinalized": row.pollOption.isFinalized,
+                        "votes": {
+                            "notVoted": 0,
+                            "agree": 0,
+                            "disagree": 0
+                        }
+                    };
+                dic[row.pollOption.id]["votes"][row.states] = votes.count[i].count;
+            });
             res.status(200).json({
-                                "id": form.id,
-                                "title": form.title,
-                                "description": form.description,
-                                "count": votes.rows.map((row, i) => {
-                                    return {
-                                        "states": row.states,
-                                        "pollOption": {
-                                            "id": row.pollOption.id,
-                                            "description": row.pollOption.description,
-                                        },
-                                        "count": votes.count[i].count
-                                    }
-                                })
-                            })
-
+                "id": form.id,
+                "title": form.title,
+                "description": form.description,
+                "active": form.active,
+                "options": dic
+            });
         });
     })
 });

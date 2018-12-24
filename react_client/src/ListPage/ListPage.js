@@ -12,15 +12,27 @@ class ListPage extends Component {
     constructor(){
         super()
 
-        this.state = {pollsInfo:[]}
+        this.state = {
+            activatePollsInfo:[],
+            deactivatePollsInfo: [],
+            manageActivatePollsInfo: [],
+            manageDeactivatePollsInfo: []
+        }
+    }
+
+     getPolls(microServiceName, email, active, stateName) {
+        const searchLink = '/' + microServiceName + '?email=' + email + '&active=' + active;
+        Network.GetRequest(searchLink).then((res)=>{
+            this.setState({[stateName] : res});
+        });
     }
 
     componentWillMount(){
         const email = localStorage.getItem("email");
-        const searchLink = '/vote?email=' + email + '&active=1';
-        Network.GetRequest(searchLink).then((res)=>{
-            this.setState({pollsInfo: res});
-        });
+        this.getPolls('vote',email,1,'activatePollsInfo');
+        this.getPolls('vote',email,0,'deactivatePollsInfo');
+        this.getPolls('managePolls',email,1,'manageActivatePollsInfo');
+        this.getPolls('managePolls',email,0,'manageDeactivatePollsInfo');
     }
 
 
@@ -30,7 +42,11 @@ class ListPage extends Component {
                 <DefaultNavbar/>
                 <TitleComponent title='لیست جلسات'/>
                 <div className="content">
-                    <PollList pollsInfo={this.state.pollsInfo}/>
+                    <PollList pollsInfo={this.state.activatePollsInfo} message={"برای ورود به صفحه‌ی هر نظرسنجی فعال روی آن کلیک کنید"}/>
+                    <PollList pollsInfo={this.state.deactivatePollsInfo} message={"...نظرسنجی‌های غیرفعال..."}/>
+                    <PollList pollsInfo={this.state.manageActivatePollsInfo} message={"برای ورود به صفحه‌ی مدیریت هر نظرسنجی فعال روی آن کلیک کنید"}/>
+                    <PollList pollsInfo={this.state.manageDeactivatePollsInfo} message={"...مدیریت نظرسنجی‌های غیرفعال..."}/>
+                    <div className="container col-md-6 col-md-offset-3 add-poll"><a href="/addPoll">ایجاد نظرسنجی جدید</a></div>
                 </div>
             </div>
         );
