@@ -6,8 +6,8 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 
 describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', function () {
-    const Database = require('./../../../utils/DBConnection');
-    const DBUtil = require('../../../utils/DBUtils');
+    const Database = require('../../utils/DBConnection');
+    const DBUtil = require('../../utils/DBUtils');
 
     // Basic configuration: create a sinon sandbox for testing
     let sandbox = null;
@@ -20,15 +20,13 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
         sandbox && sandbox.restore();
     });
 
-    // Load fake data for the votes
+    // Load fake data for the votingRights
     sequelizeMockingMocha(
         Database,
         [
-            path.resolve(path.join(__dirname, './fakeData/users.json')),
             path.resolve(path.join(__dirname, './fakeData/pollForms.json')),
+            path.resolve(path.join(__dirname, './fakeData/users.json')),
             path.resolve(path.join(__dirname, './fakeData/votingRights.json')),
-            path.resolve(path.join(__dirname, './fakeData/pollOptions.json')),
-            path.resolve(path.join(__dirname, './fakeData/votes.json')),
         ],
         { 'logging': false }
     );
@@ -37,19 +35,19 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
         expect(DBUtil).to.exist;
     });
 
-    describe('create vote ', function () {
+    describe('create voting right ', function () {
         it('exist', function () {
-            expect(DBUtil.createVote).to.exist;
+            expect(DBUtil.createVotingRight).to.exist;
         });
 
         it('shall returns all voting rights', async function () {
-            const votes = await DBUtil.getAllVotes();
-            expect(votes).to.be.a('array');
-            const preLen = votes.length;
+            const votingRights = await DBUtil.getAllVotingRights();
+            expect(votingRights).to.be.a('array');
+            const preLen = votingRights.length;
 
-            await DBUtil.createVote({id: 2}, {id: 2});
-            const newVote = await DBUtil.getAllVotes();
-            const newLen = newVote.length;
+            await DBUtil.createVotingRight({id: 1}, {email: "hayerisadegh@gmail.com"});
+            const newVotingRights = await DBUtil.getAllVotingRights();
+            const newLen = newVotingRights.length;
             expect(newLen).to.be.equal(preLen+1);
         });
     });

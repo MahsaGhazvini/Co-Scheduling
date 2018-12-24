@@ -6,8 +6,8 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 
 describe('PollForm - PollFormService (using sequelizeMockingMocha) - ', function () {
-    const Database = require('./../../../utils/DBConnection');
-    const DBUtil = require('../../../utils/DBUtils');
+    const Database = require('../../utils/DBConnection');
+    const DBUtil = require('../../utils/DBUtils');
 
     // Basic configuration: create a sinon sandbox for testing
     let sandbox = null;
