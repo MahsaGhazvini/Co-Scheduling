@@ -45,6 +45,14 @@ describe('GET /vote/:id', function () {
                 res.body.should.have.property("description");
                 res.body.should.have.property("active");
                 res.body.should.have.property("options");
+                if (res.body.options.length > 0){
+                    for (let i = 0; i < res.body.options.length; i++){
+                        res.body.options[i].should.have.property("id");
+                        res.body.options[i].should.have.property("description");
+                        res.body.options[i].should.have.property("ourChoice");
+                        res.body.options[i].should.have.property("isFinalized");
+                    }
+                }
                 done();
             });
     });
