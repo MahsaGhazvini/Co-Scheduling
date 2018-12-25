@@ -9,6 +9,7 @@ class Vote extends Component {
         super()
 
         this.state = {
+            formId: 0,
             options: [],
             active: false,
             description: '',
@@ -24,6 +25,7 @@ class Vote extends Component {
             this.setState({active: res.active});
             this.setState({description: res.description});
             this.setState({title: res.title});
+            this.setState({formId: res.id});
         });
     }
 
@@ -38,7 +40,7 @@ class Vote extends Component {
                             <span className = "tex-title">عنوان</span> <span>{this.state.title}</span>
                             <span className = "tex-title">توضیحات</span> <span>{this.state.description}</span>
                         </div>
-                        <OptionsList options={this.state.options}/>
+                        <OptionsList options={this.state.options} formId={this.state.formId}/>
                     </div>
                 </div>
             </div>
