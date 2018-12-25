@@ -3,9 +3,8 @@ const request = require('supertest')(require('./../../../app'));
 const sinon = require('sinon');
 const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
-const should = require('should')
 
-describe('GET /managePolls/', function () {
+describe('POST /vote/:id/:pollOptionId/:ourVote', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -31,44 +30,54 @@ describe('GET /managePolls/', function () {
         { 'logging': false }
     );
 
-    var isValidres = function(res) {
-        res.body.should.have.property("id", "title", "description", "options");
-    };
-
-    it('should return list of deactive polls', function(done) {
+    it('should vote to an option', function(done) {
         request
-            .get('/managePolls?email=saharsamr@gmail.com&active=0')
+            .post('/vote/2/2/agree')
+            .send({email:"saharsamr@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(200)
+            .expect(200, {message: "success"})
             .end(function(err, res) {
                 if (err) return done(err);
-                console.log(res.body)
-                // res.body.should.be.a('array');
-                if (res.body.length > 0){
-                    res.body[0].should.have.property("id");
-                    res.body[0].should.have.property("title");
-                    res.body[0].should.have.property("description");
-                }
                 done();
             });
     });
 
-    it('should return list of active polls', function(done) {
+    it('should set a option to disagree for a member', function(done) {
         request
-            .get('/managePolls?email=saharsamr@gmail.com&active=1')
+            .post('/vote/2/2/disagree')
+            .send({email:"saharsamr@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(200)
+            .expect(200, {message: "success"})
             .end(function(err, res) {
                 if (err) return done(err);
-                console.log(res.body)
-                // res.body.should.be.a('array');
-                if (res.body.length > 0){
-                    res.body[0].should.have.property("id");
-                    res.body[0].should.have.property("title");
-                    res.body[0].should.have.property("description");
-                }
+                done();
+            });
+    });
+
+    it('should de select an option again an mark as on voted', function(done) {
+        request
+            .post('/vote/2/2/notVoted')
+            .send({email:"saharsamr@gmail.com" })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(200, {message: "success"})
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
+    });
+
+    it('should rise and error when you try to vote to a closed poll', function(done) {
+        request
+            .post('/vote/1/2/notVoted')
+            .send({email:"saharsamr@gmail.com" })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(400)
+            .end(function(err, res) {
+                if (err) return done(err);
                 done();
             });
     });

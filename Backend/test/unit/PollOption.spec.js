@@ -24,8 +24,8 @@ describe('PollOption - PollOptionService (using sequelizeMockingMocha) - ', func
     sequelizeMockingMocha(
         Database,
         [
-            path.resolve(path.join(__dirname, './fakeData/pollForms.json')),
-            path.resolve(path.join(__dirname, './fakeData/pollOptions.json')),
+            path.resolve(path.join(__dirname, './mockedData/pollForms.json')),
+            path.resolve(path.join(__dirname, './mockedData/pollOptions.json')),
         ],
         { 'logging': false }
     );

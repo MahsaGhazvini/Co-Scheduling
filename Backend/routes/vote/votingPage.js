@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
             }]
         }).then(options => {
             if(form === null || options.length === 0)
-                res.send(404);
+                res.send(403);
             else
                 res.status(200).json({
                     "id": form.id,

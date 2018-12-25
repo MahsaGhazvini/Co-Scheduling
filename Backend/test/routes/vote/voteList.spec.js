@@ -5,7 +5,7 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 const should = require('should')
 
-describe('GET /managePolls/:id', function () {
+describe('GET /vote', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -31,24 +31,39 @@ describe('GET /managePolls/:id', function () {
         { 'logging': false }
     );
 
-    var isValidres = function(res) {
-        res.body.should.have.property("id", "title", "description", "options");
-    };
-
-    it('should return list of active or closed polls', function(done) {
+    it('should return list of active polls that you can vote on', function(done) {
         request
-            .get('/managePolls/2?email=saharsamr@gmail.com&active=0')
+            .get('/vote?email=saharsamr@gmail.com&active=1')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function(err, res) {
                 if (err) return done(err);
-                res.body.should.have.property("id");
-                res.body.should.have.property("description");
-                res.body.should.have.property("title");
-                res.body.should.have.property("options");
-                res.body.should.have.property("active");
+                console.log(res.body);
+                if (res.body.length > 0){
+                    res.body[0].should.have.property("id");
+                    res.body[0].should.have.property("title");
+                    res.body[0].should.have.property("description");
+                }
                 done();
-        });
+            });
+    });
+
+    it('should return list of deactive polls that you can not vote any more', function(done) {
+        request
+            .get('/vote?email=saharsamr@gmail.com&active=0')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .end(function(err, res) {
+                if (err) return done(err);
+                console.log(res.body);
+                if (res.body.length > 0){
+                    res.body[0].should.have.property("id");
+                    res.body[0].should.have.property("title");
+                    res.body[0].should.have.property("description");
+                }
+                done();
+            });
     });
 });

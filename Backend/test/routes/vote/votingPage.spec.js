@@ -5,7 +5,7 @@ const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 const should = require('should')
 
-describe('GET /managePolls/:id', function () {
+describe('GET /vote/:id', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -31,24 +31,33 @@ describe('GET /managePolls/:id', function () {
         { 'logging': false }
     );
 
-    var isValidres = function(res) {
-        res.body.should.have.property("id", "title", "description", "options");
-    };
-
-    it('should return list of active or closed polls', function(done) {
+    it('should return detail of a passed poll', function(done) {
         request
-            .get('/managePolls/2?email=saharsamr@gmail.com&active=0')
+            .get('/vote/2?email=saharsamr@gmail.com')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
             .end(function(err, res) {
                 if (err) return done(err);
+                console.log(res.body);
                 res.body.should.have.property("id");
-                res.body.should.have.property("description");
                 res.body.should.have.property("title");
-                res.body.should.have.property("options");
+                res.body.should.have.property("description");
                 res.body.should.have.property("active");
+                res.body.should.have.property("options");
                 done();
-        });
+            });
+    });
+
+    it('should rise error when you are not a member', function(done) {
+        request
+            .get('/vote/2?email=sahar.rajabi@gmail.com')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /text/)
+            .expect(403)
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
     });
 });
