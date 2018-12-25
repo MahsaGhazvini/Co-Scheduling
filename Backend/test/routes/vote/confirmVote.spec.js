@@ -21,11 +21,11 @@ describe('POST /vote/:id/:pollOptionId/:ourVote', function () {
     sequelizeMockingMocha(
         Database,
         [
-            path.resolve(path.join(__dirname, '../../unit/fakeData/users.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/pollForms.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/votingRights.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/pollOptions.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/votes.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/users.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/pollForms.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/votingRights.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/pollOptions.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/votes.json')),
         ],
         { 'logging': false }
     );
@@ -37,6 +37,45 @@ describe('POST /vote/:id/:pollOptionId/:ourVote', function () {
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {message: "success"})
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
+    });
+
+    it('should set a option to disagree for a member', function(done) {
+        request
+            .post('/vote/2/2/disagree')
+            .send({email:"saharsamr@gmail.com" })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(200, {message: "success"})
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
+    });
+
+    it('should de select an option again an mark as on voted', function(done) {
+        request
+            .post('/vote/2/2/notVoted')
+            .send({email:"saharsamr@gmail.com" })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(200, {message: "success"})
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
+    });
+
+    it('should rise and error when you try to vote to a closed poll', function(done) {
+        request
+            .post('/vote/1/2/notVoted')
+            .send({email:"saharsamr@gmail.com" })
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /json/)
+            .expect(400)
             .end(function(err, res) {
                 if (err) return done(err);
                 done();

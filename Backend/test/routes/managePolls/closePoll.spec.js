@@ -21,11 +21,11 @@ describe('POST /managePolls/:id/:pollOptionId', function () {
     sequelizeMockingMocha(
         Database,
         [
-            path.resolve(path.join(__dirname, '../../unit/fakeData/users.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/pollForms.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/votingRights.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/pollOptions.json')),
-            path.resolve(path.join(__dirname, '../../unit/fakeData/votes.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/users.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/pollForms.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/votingRights.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/pollOptions.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/votes.json')),
         ],
         { 'logging': false }
     );

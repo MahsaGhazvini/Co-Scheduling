@@ -23,7 +23,7 @@ describe('User - UserService (using sequelizeMockingMocha) - ', function () {
     // Load fake data for the users
     sequelizeMockingMocha(
         Database,
-        path.resolve(path.join(__dirname, './fakeData/users.json')),
+        path.resolve(path.join(__dirname, './mockedData/users.json')),
         { 'logging': false }
     );
 
