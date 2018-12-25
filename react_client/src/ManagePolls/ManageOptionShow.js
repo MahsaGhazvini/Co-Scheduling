@@ -5,7 +5,6 @@ import * as Network from "../Common/RequestMaker";
 class ManageOptionShow extends Component {
     constructor(props){
         super();
-        console.log("start");
         this.state = {
             isFinalized: props.option.data.isFinalized,
             votes: props.option.data.votes

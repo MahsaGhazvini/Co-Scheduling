@@ -38,7 +38,7 @@ class ListPage extends Component {
 
     render() {
         return (
-            <div className="body-search">
+            <div className="list-page">
                 <DefaultNavbar/>
                 <TitleComponent title='لیست جلسات'/>
                 <div className="content">
