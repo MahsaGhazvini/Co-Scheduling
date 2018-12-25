@@ -8,6 +8,7 @@ class ManageOptionList extends Component {
         let options = this.props.options;
         const items = [];
         console.log("(((((((",options);
+        console.log(this.props.isActive);
         if (this.props.isActive === true){
             for(let i=0;i<options.length;i++){
                 items.push(
