@@ -9,7 +9,7 @@ class Vote extends Component {
         super()
 
         this.state = {
-            formId: 0,
+            formId: -1,
             options: [],
             active: false,
             description: '',
@@ -21,11 +21,13 @@ class Vote extends Component {
         const email = localStorage.getItem("email");
         const link = '/vote/'+this.props.match.params.pollId+'?email='+email;
         Network.GetRequest(link).then((res)=>{
-            this.setState({options: res.options});
-            this.setState({active: res.active});
-            this.setState({description: res.description});
-            this.setState({title: res.title});
-            this.setState({formId: res.id});
+            if(res !== undefined){
+                this.setState({options: res.options});
+                this.setState({active: res.active});
+                this.setState({description: res.description});
+                this.setState({title: res.title});
+                this.setState({formId: res.id});
+            }
         });
     }
 
@@ -36,11 +38,11 @@ class Vote extends Component {
                 <TitleComponent title='جزئیات جلسه'/>
                 <div className="container">
                     <div className="row col-md-12">
-                        <div className="col-md-6">
+                        <div className="col-md-6" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
                             <span className = "tex-title">عنوان</span> <span>{this.state.title}</span>
                             <span className = "tex-title">توضیحات</span> <span>{this.state.description}</span>
                         </div>
-                        <OptionsList options={this.state.options} formId={this.state.formId}/>
+                        <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
                     </div>
                 </div>
             </div>
