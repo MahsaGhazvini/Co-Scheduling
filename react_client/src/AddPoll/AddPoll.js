@@ -13,8 +13,8 @@ class HomePage extends Component {
         this.state = {
             title: '',
             description: '',
-            members: [],
-            options: [],
+            members: '',
+            options: '',
             members_email: [],
             options_title: [],
             email: '',
@@ -27,13 +27,13 @@ class HomePage extends Component {
     }
 
     submitAddMail(event) {
-        this.state.members.push(this.state.email);
+        this.setState({members: this.state.members + ',' + this.state.email});
         this.state.members_email.push({'email': this.state.email});
         this.setState({email: ''});
     }
 
     submitAddOption(event){
-        this.state.options.push(this.state.option);
+        this.setState({options: this.state.options + ',' + this.state.option});
         this.state.options_title.push({'title': this.state.option});
         this.setState({option: ''});
     }
@@ -51,6 +51,7 @@ class HomePage extends Component {
         data.append("options", JSON.stringify(this.state.options_title));
         Network.PostRequest('http://localhost:3000/createPoll', data).then((res)=>{
             console.log(res);
+            this.props.history.push({pathname: '/listPage'});
         });
     }
 
