@@ -1,3 +1,5 @@
+//import {promised} from "q";
+
 export function GetRequest(url){
     var headers = {
         'Accept':"aplication/json",
