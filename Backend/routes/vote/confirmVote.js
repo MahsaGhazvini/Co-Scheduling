@@ -8,15 +8,15 @@ const PollOption = require('../../models/PollOption');
 const Vote = require('../../models/Vote');
 
 router.post('/', function(req, res, next) {
-    const email = req.query.email;
+    const email = req.body.email;
     const formId = req.pollId;
     const optionId = req.optionId;
     const ourVote = req.ourVote;
-    if(ourVote !== 'agree' && ourVote !== 'disagree')
-        return res.status(400).send('Bad voting!');
+    if(ourVote !== 'agree' && ourVote !== 'disagree' && ourVote !== 'notVoted')
+        return res.status(400).json({'message':'Bad voting!'});
     PollForm.findById(formId).then(form => {
        if(form.active === false)
-           return res.status(400).send('Poll form ended!');
+           return res.status(400).json({'message':'Poll form ended!'});
        else{
            Vote.findOne({
                where: {pollOptionId: optionId},
@@ -30,10 +30,10 @@ router.post('/', function(req, res, next) {
            }).then(out => {
                out.states= ourVote;
                out.save();
-               return res.status(200).send('Successful');
-           }).catch(error => {return res.status(400).send('Unmatched input parameter')})
+               return res.status(200).json({'message': 'success'});
+           }).catch(error => {return res.status(400).json({'message':'Unmatched input parameter'})})
        }
-    }).catch(error => {return res.status(400).send('Poll form not exist')})
+    }).catch(error => {return res.status(400).json({'message':'Poll form not exist'})})
 });
 
 module.exports = router;
