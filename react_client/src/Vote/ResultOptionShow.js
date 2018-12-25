@@ -4,9 +4,8 @@ import {withRouter} from 'react-router';
 class ResultOptionShow extends Component {
     constructor(props){
         super();
-        console.log(props.option);
+        console.log("______",props.option);
         this.state = {
-            ourVote: props.option.ourChoice,
             isFinalized: props.option.isFinalized
         };
     }
