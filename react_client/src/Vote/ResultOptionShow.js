@@ -12,8 +12,8 @@ class ResultOptionShow extends Component {
 
     render() {
         return (
-            <div className="col-lg-6">
-                <div className="box1">
+            <div className="col-lg-6 col-md-6">
+                <div className="">
                     <div className={"card h-100 poll-box"} style={{"background-color": (this.state.isFinalized)? 'green': 'white'}}>
                         <div className="card-body row">
                             <div className="card-body line">{this.props.option.description}</div>

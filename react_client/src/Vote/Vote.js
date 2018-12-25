@@ -36,11 +36,12 @@ class Vote extends Component {
             <div className="body-more-info">
                 <DefaultNavbar/>
                 <TitleComponent title='جزئیات جلسه'/>
-                <div className="container">
-                    <div className="row col-md-12">
-                        <div className="col-md-6" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
-                            <span className = "tex-title">عنوان</span> <span>{this.state.title}</span>
-                            <span className = "tex-title">توضیحات</span> <span>{this.state.description}</span>
+                <div className="container description">
+                    <div className="col-md-12">
+                        <div className="" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
+
+                            <div className = "col-md-6">عنوان</div> <div>{this.state.title}</div>
+                            <div className = "col-md-6">توضیحات</div> <div>{this.state.description}</div>
                         </div>
                         <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
                     </div>

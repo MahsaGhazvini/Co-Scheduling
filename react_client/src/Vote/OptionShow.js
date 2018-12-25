@@ -26,7 +26,7 @@ class OptionShow extends Component {
 
     render() {
         return (
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-6">
                 <div className="box1">
                     <div className={"card h-100 poll-box"}>
                         <div className="card-body row">
