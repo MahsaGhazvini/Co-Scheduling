@@ -9,7 +9,7 @@ class OptionsList extends Component {
         const items = [];
         for(let i=0;i<options.length;i++){
             items.push(
-                <OptionShow option={options[i]}/>
+                <OptionShow option={options[i]} formId={this.props.formId}/>
             )
         }
         return (
