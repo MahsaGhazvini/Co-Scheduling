@@ -48,4 +48,16 @@ describe('GET /vote/:id', function () {
                 done();
             });
     });
+
+    it('should rise error when you are not a member', function(done) {
+        request
+            .get('/vote/2?email=sahar.rajabi@gmail.com')
+            .set('Accept', 'application/json')
+            .expect('Content-Type', /text/)
+            .expect(403)
+            .end(function(err, res) {
+                if (err) return done(err);
+                done();
+            });
+    });
 });
