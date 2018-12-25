@@ -38,5 +38,13 @@
       "description": "third option",
       "pollFormId": 1
     }
+  },
+  {
+    "model": "pollOption",
+    "data": {
+      "id": 6,
+      "description": "first option",
+      "pollFormId": 3
+    }
   }
 ]
