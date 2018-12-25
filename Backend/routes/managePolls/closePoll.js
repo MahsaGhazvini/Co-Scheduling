@@ -38,6 +38,7 @@ router.post('/', function(req, res, next) {
             pollFormId: pollId
         });
        let members = votingRights.map(votingRight => votingRight.dataValues.userId).toString();
+       return members;
     };
 });
 

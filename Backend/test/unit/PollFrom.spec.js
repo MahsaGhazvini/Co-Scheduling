@@ -24,8 +24,8 @@ describe('PollForm - PollFormService (using sequelizeMockingMocha) - ', function
     sequelizeMockingMocha(
         Database,
         [
-            path.resolve(path.join(__dirname, './mockedData/pollForms.json')),
             path.resolve(path.join(__dirname, './mockedData/users.json')),
+            path.resolve(path.join(__dirname, './mockedData/pollForms.json')),
         ],
         { 'logging': false }
     );
