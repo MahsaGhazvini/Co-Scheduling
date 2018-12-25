@@ -1,6 +1,7 @@
 const DBUtils = require('../../utils/DBUtils');
 const express = require('express');
 const router = express.Router();
+const mail = require('../../services/sendingEmail');
 
 router.post('/', async function createPoll(req, res){
     const creator = req.body.creator;
@@ -31,6 +32,18 @@ router.post('/', async function createPoll(req, res){
             });
         })
     });
+
+    const memberString = async function (member){
+        let result = "";
+        if (member.length > 0){
+            result = result + member[0].email;
+            for (let i = 1; i < member.length; i++)
+                result = result + ", " + member[i].email;
+        }
+        return result;
+    };
+
+    await mail({user: "user", pass: "pass"},memberString(pollMembers), "create", );
 
     res.status(200).send('successful');
 });
