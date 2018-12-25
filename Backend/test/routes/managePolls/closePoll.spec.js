@@ -32,17 +32,18 @@ describe('POST /managePolls/:id/:pollOptionId', function () {
 
     it('should close a poll', function(done) {
         request
-            .post('/managePolls/2/2?email=saharsamr@gmail.com')
+            .post('/managePolls/2/2')
+            .send({email: "saharsamr@gmail.com"})
             .set('Accept', 'application/json')
-            .expect('Content-Type', /html/)
+            .expect('Content-Type', /json/)
             .expect(200, done);
     });
 
     it('should rise error when the poll is not yours', function(done) {
         request
-            .post('/managePolls/3/6?email=saharsamr@gmail.com')
+            .post('/managePolls/3/6')
+            .send({email: "saharsamr@gmail.com"})
             .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
             .expect(403, done);
     });
 });
