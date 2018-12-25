@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import * as Network from '../Common/RequestMaker';
 import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
+
+import ManageOptionList from './ManageOptionList';
 import './../Styles/common.css';
-import OptionsList from './OptionsList';
-class Vote extends Component {
+
+class ManagePolls extends Component {
     constructor(){
-        super()
+        super();
 
         this.state = {
             formId: -1,
@@ -19,10 +21,19 @@ class Vote extends Component {
 
     componentWillMount(){
         const email = localStorage.getItem("email");
-        const link = '/vote/'+this.props.match.params.pollId+'?email='+email;
+        const link = '/managePolls/'+this.props.match.params.pollId+'?email='+email;
         Network.GetRequest(link).then((res)=>{
             if(res !== undefined){
-                this.setState({options: res.options});
+                this.setState(
+                    {
+                        options: Object.keys(res.options).map(o=>{
+                            return {
+                                id: o,
+                                data: res.options[o]
+                            };
+
+                        })
+                    });
                 this.setState({active: res.active});
                 this.setState({description: res.description});
                 this.setState({title: res.title});
@@ -35,14 +46,14 @@ class Vote extends Component {
         return (
             <div className="body-more-info">
                 <DefaultNavbar/>
-                <TitleComponent title='جزئیات جلسه'/>
+                <TitleComponent title='مدیریت جلسه'/>
                 <div className="container">
                     <div className="row col-md-12">
                         <div className="col-md-6" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
                             <span className = "tex-title">عنوان</span> <span>{this.state.title}</span>
                             <span className = "tex-title">توضیحات</span> <span>{this.state.description}</span>
                         </div>
-                        <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
+                        <ManageOptionList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
                     </div>
                 </div>
             </div>
@@ -50,4 +61,4 @@ class Vote extends Component {
     }
 }
 
-export default Vote;
+export default ManagePolls;

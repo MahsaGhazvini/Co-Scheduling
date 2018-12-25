@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
-// import * as Network from "../Common/RequestMaker";
+import * as Network from "../Common/RequestMaker";
 
 //const request = require('request');
 
@@ -42,16 +42,15 @@ class HomePage extends Component {
     }
 
     submitForm(event){
-        let data = {};
-        data['creator'] = JSON.stringify({email: localStorage.getItem("email")});
-        data['title']= this.state.title;
-        data['description']= this.state.description;
-        data['members']= JSON.stringify(this.state.members_email);
-        data['options']= JSON.stringify(this.state.options_title);
-        console.log(JSON.stringify(data, null, 2));
-        // Network.PostRequest('/createPoll', JSON.stringify(data)).then((res)=>{
-        //     console.log(res);
-        // });
+        let data = new URLSearchParams();
+        data.append("creator", JSON.stringify({email: localStorage.getItem("email")}));
+        data.append("title", this.state.title);
+        data.append("description", this.state.description);
+        data.append("members", JSON.stringify(this.state.members_email));
+        data.append("options", JSON.stringify(this.state.options_title));
+        Network.PostRequest('http://localhost:3000/createPoll', data).then((res)=>{
+            console.log(res);
+        });
     }
 
     render() {

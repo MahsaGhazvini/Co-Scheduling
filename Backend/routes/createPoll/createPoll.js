@@ -4,11 +4,18 @@ const router = express.Router();
 const mail = require('../../services/sendingEmail');
 
 router.post('/', async function createPoll(req, res){
-    const creator = req.body.creator;
-    const title = req.body.title;
-    const description = req.body.description;
-    const pollMembers = req.body.members;
-    const options = req.body.options;
+    var creator,pollMembers, options;
+    try {
+        creator = JSON.parse(req.body.creator);
+        pollMembers = JSON.parse(req.body.members);
+        options = JSON.parse(req.body.options);
+    }catch(e){
+        creator = req.body.creator;
+        pollMembers = req.body.members;
+        options = req.body.options;
+    }
+    let title = req.body.title;
+    let description = req.body.description;
 
     await DBUtils.createUser(creator.email);
     const poll = await DBUtils.createPoll(title, description, creator);
@@ -46,6 +53,7 @@ router.post('/', async function createPoll(req, res){
     await mail({user: "user", pass: "pass"},memberString(pollMembers), "create", );
 
     res.status(200).send('successful');
+    return res.status(200).json({'message':'successful'});
 });
 
 module.exports = router;

@@ -29,7 +29,8 @@ router.get('/', function(req, res, next) {
                         return {
                             "id": option.pollOption.id,
                             "description": option.pollOption.description,
-                            "ourChoice": option.states
+                            "ourChoice": option.states,
+                            "isFinalized": option.pollOption.isFinalized,
                         };
                     })
                 })
