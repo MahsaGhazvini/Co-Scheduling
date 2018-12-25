@@ -14,7 +14,6 @@ class ManageOptionShow extends Component {
     }
 
     handleClick(event){
-        console.log("click");
         const email = localStorage.getItem("email");
         const URL = '/managePolls/'+this.props.formId+'/'+this.props.option.id;
         let data = new URLSearchParams();
