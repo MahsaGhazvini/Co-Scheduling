@@ -51,8 +51,7 @@ router.post('/', async function createPoll(req, res){
     };
 
     await mail({user: "user", pass: "pass"},memberString(pollMembers), "create", );
-
-    res.status(200).send('successful');
+    
     return res.status(200).json({'message':'successful'});
 });
 
