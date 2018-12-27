@@ -3,6 +3,8 @@ const PollForm = require('../models/PollForm');
 const PollOption = require('../models/PollOption');
 const VotingRight = require('../models/VotingRight');
 const Vote = require('../models/Vote');
+const CommentOption = require('../models/CommentOption');
+const ReplyComment = require('../models/ReplyComment');
 
 User.sync().then(function(){
     console.log('user table created')
@@ -30,6 +32,18 @@ VotingRight.sync().then(function(){
 
 Vote.sync().then(function(){
     console.log('vote table created')
+}).error(function(error){
+    console.log(err);
+});
+
+CommentOption.sync().then(function(){
+    console.log('commentOption table created')
+}).error(function(error){
+    console.log(err);
+});
+
+ReplyComment.sync().then(function(){
+    console.log('replyComment table created')
 }).error(function(error){
     console.log(err);
 });
