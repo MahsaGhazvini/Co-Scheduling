@@ -38,6 +38,7 @@ class OptionShow extends Component {
                                 <input id={"notVoted"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="notVoted" onChange={this.handleRadioChange} className="input"/><span className="white-color radio-box">بدون نظر</span>
                                 <input id={"agree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="agree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">می‌توانم</span>
                                 <input id={"disagree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="disagree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">نمی‌توانم</span>
+                                <input id={"maybe"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="maybe" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">شاید بتوانم</span>
                             </div>
                         </div>
                     </div>

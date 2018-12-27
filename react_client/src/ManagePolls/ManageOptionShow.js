@@ -32,7 +32,8 @@ class ManageOptionShow extends Component {
                             <hr/>
                             <div class="row"> <span>تعداد افراد موافق:</span> <span>{this.state.votes.agree}</span> </div>
                             <div className="row"><span>تعداد افراد مخالف:</span> <span>{this.state.votes.disagree}</span></div>
-                            <div className="row"><span>تعداد افراد خنثی:</span> <span>{this.state.votes.notVoted}</span></div>
+                            <div className="row"><span>تعداد افراد خنثی:</span> <span>{this.state.votes.maybe}</span></div>
+                            <div className="row"><span>تعداد افراد رای نداده:</span> <span>{this.state.votes.notVoted}</span></div>
                         </div>
                     </div>
                 </div>
