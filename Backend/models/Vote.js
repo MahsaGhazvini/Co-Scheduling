@@ -11,7 +11,7 @@ const Vote = sequelize.define('vote', {
     },
     states: {
         type:   Sequelize.ENUM,
-        values: ['agree', 'disagree', 'notVoted'],
+        values: ['agree', 'disagree', 'notVoted', 'maybe'],
         defaultValue: 'notVoted'
     }
 });

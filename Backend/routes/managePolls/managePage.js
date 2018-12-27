@@ -30,6 +30,7 @@ router.get('/', function(req, res, next) {
                         "votes": {
                             "notVoted": 0,
                             "agree": 0,
+                            "maybe": 0,
                             "disagree": 0
                         }
                     };

@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
     const formId = req.pollId;
     const optionId = req.optionId;
     const ourVote = req.ourVote;
-    if(ourVote !== 'agree' && ourVote !== 'disagree' && ourVote !== 'notVoted')
+    if(ourVote !== 'agree' && ourVote !== 'disagree' && ourVote !== 'notVoted' && ourVote !== 'maybe')
         return res.status(400).json({'message':'Bad voting!'});
     PollForm.findById(formId).then(form => {
        if(form.active === false)
