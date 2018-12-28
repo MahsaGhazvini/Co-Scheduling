@@ -8,6 +8,6 @@ const Comment = require('./Comment');
 router.use('/createPoll', createPoll);
 router.use('/managePolls', managePolls);
 router.use('/vote', vote);
-router.use('/addComment', Comment);
+router.use('/comment', Comment);
 
 module.exports = router;
