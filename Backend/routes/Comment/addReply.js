@@ -5,7 +5,7 @@ const router = express.Router();
 router.post('/', async function addComment(req, res){
     let owner = req.body.owner;
     let content = req.body.content;
-    let commentId = req.body.optionId;
+    let commentId = req.body.commentId;
     let replyTo = req.body.replyTo;
 
     await DBUtils.createReplyComment(owner, commentId, replyTo, content);
