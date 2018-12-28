@@ -4,6 +4,7 @@ var VotingRight = require('../models/VotingRight');
 var Vote = require('../models/Vote');
 var User = require('../models/User');
 var CommentOption = require('../models/CommentOption');
+var ReplyComment = require('../models/ReplyComment');
 
 async function createUser(email) {
     const user = await User.findOne(
@@ -59,6 +60,15 @@ async function createCommentOption(owner, optionId, content) {
     });
 }
 
+async function createReplyComment(owner, commentId, replyTo, content) {
+    return await ReplyComment.create({
+        content: content,
+        owner: owner,
+        commentId: commentId,
+        replyTo: replyTo
+    });
+}
+
 async function getAllVotingRights() {
     const votingRights = await VotingRight.findAll();
     return votingRights.map(votingRights => votingRights.dataValues);
@@ -93,4 +103,5 @@ module.exports = {
     createVote: createVote,
     getAllVotes: getAllVotes,
     createCommentOption: createCommentOption,
+    createReplyComment: createReplyComment,
 };
