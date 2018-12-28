@@ -41,7 +41,7 @@ class ListPage extends Component {
             <div>
                 <DefaultNavbar/>
                 <TitleComponent title='لیست جلسات'/>
-                <div className="list-page-view">
+                <div className="content-container">
                     <PollList pollsInfo={this.state.activatePollsInfo} message={"برای ورود به صفحه‌ی هر نظرسنجی فعال روی آن کلیک کنید"} server={'vote'}/>
                     <PollList pollsInfo={this.state.deactivatePollsInfo} message={"...نظرسنجی‌های غیرفعال..."} server={'vote'}/>
                     <PollList pollsInfo={this.state.manageActivatePollsInfo} message={"برای ورود به صفحه‌ی مدیریت هر نظرسنجی فعال روی آن کلیک کنید"} server={'managePolls'}/>

@@ -12,8 +12,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 30%;
-    height:400px;
-    padding: 100px;
+    height:200px;
 }
 
 .login .login-box .input-box{
@@ -48,7 +47,6 @@
     border-radius: 10px;
     border: none;
     padding: 15px;
-    margin-bottom: 80px;
 }
 
 .tex-title{
