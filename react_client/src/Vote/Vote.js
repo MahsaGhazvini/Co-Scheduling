@@ -4,6 +4,7 @@ import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
 import './../Styles/common.css';
 import OptionsList from './OptionsList';
+
 class Vote extends Component {
     constructor(){
         super()
@@ -38,7 +39,6 @@ class Vote extends Component {
                 <TitleComponent title='جزئیات جلسه'/>
                 <div className="container content-container">
                         <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
-
                             <div className = "poll-title">
                                 <span className="col-md-6" style={{float:"right"}}>
                                     عنوان

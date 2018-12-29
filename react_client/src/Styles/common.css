@@ -29,6 +29,9 @@
 .float-left{
     float: left;
 }
+.text-left{
+    text-align: left;
+}
 .margin-bottom{
     margin-bottom: 30px;
 }
