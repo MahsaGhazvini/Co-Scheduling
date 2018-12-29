@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f55535ec-44b2-4bcb-8862-fc87191c580e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/services/sendingEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/services/sendingEmail.js" afterDir="false" />
     </list>
@@ -14,57 +13,49 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Backend/services/sendingEmail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/config/config.js">
+        <entry file="file://$PROJECT_DIR$/Backend/routes/managePolls/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/routes/managePolls/closePoll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="331">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/mockedData/votes.json">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/.gitignore">
+        <entry file="file://$PROJECT_DIR$/Backend/test/unit/mockedData/pollForms.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="85" column="7" selection-start-line="85" selection-start-column="7" selection-end-line="85" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/node_modules/nodemailer/lib/nodemailer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="306">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Backend/routes/index.js">
+        <entry file="file://$PROJECT_DIR$/Backend/test/routes/managePolls/closePoll.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="-153">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -292,7 +283,77 @@
               <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
               <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
               <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="createPoll" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="managePolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="createPoll" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="managePolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Co-Scheduling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Co-Scheduling" type="462c0819:PsiDirectoryNode" />
+              <item name="Backend" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="unit" type="462c0819:PsiDirectoryNode" />
+              <item name="mockedData" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -409,11 +470,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Mocha.PollForm - PollFormService (using sequelizeMockingMocha) - " />
-      <item itemvalue="Mocha.POST /createPoll" />
-      <item itemvalue="Mocha.POST /managePolls/:id/:pollOptionId" />
       <item itemvalue="Mocha.GET /managePolls/" />
       <item itemvalue="Mocha.GET /managePolls/:id" />
+      <item itemvalue="Mocha.POST /createPoll" />
+      <item itemvalue="Mocha.POST /managePolls/:id/:pollOptionId" />
+      <item itemvalue="Mocha.PollForm - PollFormService (using sequelizeMockingMocha) - " />
     </list>
     <recent_temporary>
       <list>
@@ -482,7 +543,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46139000" />
+    <option name="totallyTimeSpent" value="46144000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -500,6 +561,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14200744" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32786885" />
@@ -547,8 +609,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/test/unit/mockedData/pollForms.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="306">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -814,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/routes/managePolls/closePoll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+        <state relative-caret-position="331">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -838,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/test/routes/managePolls/closePoll.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+        <state relative-caret-position="-153">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -891,7 +953,7 @@
     <entry file="file://$PROJECT_DIR$/Backend/services/sendingEmail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
