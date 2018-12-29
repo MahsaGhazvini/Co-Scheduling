@@ -33,7 +33,7 @@ describe('POST /managePolls/:id/:pollOptionId', function () {
     it('should close a poll', function(done) {
         request
             .post('/managePolls/2/2')
-            .send({email: "saharsamr@gmail.com"})
+            .send({email: "sahar.rajabi76@gmail.com"})
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, done);

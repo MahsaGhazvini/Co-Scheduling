@@ -39,8 +39,8 @@ describe('POST /createPoll', function () {
                     title: "test",
                     description: "testing!",
                     members: [
-                        {email: "a.b@c.com"},
-                        {email: "d.f@g.com"}
+                        {email: "sahar.rajabi76@gmail.com"},
+                        {email: "sahar.rajabi76@gmail.com"}
                     ],
                     options: [
                         {title: "one"},
