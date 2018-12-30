@@ -32,65 +32,64 @@ describe('POST /vote/:id/:pollOptionId/:ourVote', function () {
 
     it('should vote to an option', function(done) {
         request
-            .post('/vote/2/2/agree')
+            .post('/vote/2/3/agree')
             .send({email:"sahar.rajabi76@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {message: "success"})
             .end(function(err, res) {
-                if (err) return done(err);
+                if (err) {
+                    console.log(err.toString());
+                    return done(err);
+                }
                 done();
             });
     });
 
     it('should set a option to disagree for a member', function(done) {
         request
-            .post('/vote/2/2/disagree')
+            .post('/vote/1/2/disagree')
             .send({email:"sahar.rajabi76@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {message: "success"})
             .end(function(err, res) {
-                if (err) return done(err);
+                if (err) {
+                    console.log(err.toString());
+                    return done(err);
+                }
                 done();
             });
     });
 
     it('should de select an option again an mark as on voted', function(done) {
         request
-            .post('/vote/2/2/notVoted')
+            .post('/vote/1/2/notVoted')
             .send({email:"sahar.rajabi76@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, {message: "success"})
             .end(function(err, res) {
-                if (err) return done(err);
-                done();
-            });
-    });
-
-    it('should de select an option as maybe, for showing you prefer not to come at that time!', function(done) {
-        request
-            .post('/vote/2/2/maybe')
-            .send({email:"sahar.rajabi76@gmail.com" })
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-            .expect(200, {message: "success"})
-            .end(function(err, res) {
-                if (err) return done(err);
+                if (err) {
+                    console.log(err.toString());
+                    return done(err);
+                }
                 done();
             });
     });
 
     it('should rise and error when you try to vote to a closed poll', function(done) {
         request
-            .post('/vote/1/2/notVoted')
+            .post('/vote/3/6/notVoted')
             .send({email:"sahar.rajabi76@gmail.com" })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(400)
             .end(function(err, res) {
-                if (err) return done(err);
+                if (err) {
+                    console.log(err.toString());
+                    return done(err);
+                }
                 done();
             });
     });

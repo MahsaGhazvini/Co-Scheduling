@@ -3,7 +3,7 @@
     "model": "votingRight",
     "data": {
       "id": 1,
-      "pollFormId": 2,
+      "pollFormId": 1,
       "userId": "sahar.rajabi76@gmail.com"
     }
   },
@@ -11,8 +11,120 @@
     "model": "votingRight",
     "data": {
       "id": 2,
+      "pollFormId": 1,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 3,
       "pollFormId": 2,
       "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 4,
+      "pollFormId": 2,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 5,
+      "pollFormId": 3,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 6,
+      "pollFormId": 3,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 7,
+      "pollFormId": 4,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 8,
+      "pollFormId": 4,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 9,
+      "pollFormId": 5,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 10,
+      "pollFormId": 5,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 11,
+      "pollFormId": 6,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 12,
+      "pollFormId": 6,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 13,
+      "pollFormId": 7,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 14,
+      "pollFormId": 7,
+      "userId": "hayerisadegh@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 15,
+      "pollFormId": 8,
+      "userId": "sahar.rajabi76@gmail.com"
+    }
+  },
+  {
+    "model": "votingRight",
+    "data": {
+      "id": 16,
+      "pollFormId": 8,
+      "userId": "hayerisadegh@gmail.com"
     }
   }
 ]

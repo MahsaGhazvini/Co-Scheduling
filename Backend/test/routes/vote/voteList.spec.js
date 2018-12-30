@@ -33,7 +33,7 @@ describe('GET /vote', function () {
 
     it('should return list of active polls that you can vote on', function(done) {
         request
-            .get('/vote?email=saharsamr@gmail.com&active=1')
+            .get('/vote?email=sahar.rajabi76@gmail.com&active=1')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
@@ -51,7 +51,7 @@ describe('GET /vote', function () {
 
     it('should return list of deactive polls that you can not vote any more', function(done) {
         request
-            .get('/vote?email=saharsamr@gmail.com&active=0')
+            .get('/vote?email=sahar.rajabi76@gmail.com&active=0')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)

@@ -1,0 +1,11 @@
+[
+  {
+    "model": "replyComment",
+    "data": {
+      "id": 1,
+      "owner": "hayerisadegh@gmail.com",
+      "content": "and then?",
+      "replyTo": null
+    }
+  }
+]

@@ -3,7 +3,16 @@
     "model": "vote",
     "data": {
       "id": 1,
-      "state": "notVoted",
+      "states": "notVoted",
+      "votingRightId": 1,
+      "pollOptionId": 1
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 2,
+      "states": "notVoted",
       "votingRightId": 1,
       "pollOptionId": 2
     }
@@ -11,10 +20,55 @@
   {
     "model": "vote",
     "data": {
-      "id": 2,
-      "state": "notVoted",
-      "votingRightId": 1,
+      "id": 3,
+      "states": "notVoted",
+      "votingRightId": 2,
+      "pollOptionId": 1
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 4,
+      "states": "notVoted",
+      "votingRightId": 2,
       "pollOptionId": 2
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 5,
+      "states": "notVoted",
+      "votingRightId": 3,
+      "pollOptionId": 3
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 6,
+      "states": "notVoted",
+      "votingRightId": 3,
+      "pollOptionId": 4
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 7,
+      "states": "notVoted",
+      "votingRightId": 4,
+      "pollOptionId": 3
+    }
+  },
+  {
+    "model": "vote",
+    "data": {
+      "id": 8,
+      "states": "notVoted",
+      "votingRightId": 4,
+      "pollOptionId": 4
     }
   }
 ]

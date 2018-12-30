@@ -33,7 +33,7 @@ describe('GET /vote/:id', function () {
 
     it('should return detail of a passed poll', function(done) {
         request
-            .get('/vote/2?email=saharsamr@gmail.com')
+            .get('/vote/2?email=sahar.rajabi76@gmail.com')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)

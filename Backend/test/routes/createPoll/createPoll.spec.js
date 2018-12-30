@@ -35,12 +35,12 @@ describe('POST /createPoll', function () {
             .post('/createPoll')
             .send(
                 {
-                    creator: {email: "s.r@g.com"},
+                    creator: {email: "sahar.rajabi76@gmail.com"},
                     title: "test",
                     description: "testing!",
                     members: [
                         {email: "sahar.rajabi76@gmail.com"},
-                        {email: "sahar.rajabi76@gmail.com"}
+                        {email: "hayerisadegh@gmail.com"}
                     ],
                     options: [
                         {title: "one"},

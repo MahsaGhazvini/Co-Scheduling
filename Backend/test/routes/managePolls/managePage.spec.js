@@ -37,7 +37,7 @@ describe('GET /managePolls/:id', function () {
 
     it('should return list of active or closed polls', function(done) {
         request
-            .get('/managePolls/2?email=saharsamr@gmail.com&active=0')
+            .get('/managePolls/2?email=sahar.rajabi76@gmail.com')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
