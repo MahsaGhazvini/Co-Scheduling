@@ -6,7 +6,7 @@
       "title": "first poll",
       "description": "a poll to test",
       "active": true,
-      "creator": "saharsamr@gmail.com"
+      "creator": "sahar.rajabi76@gmail.com"
     }
   },
   {
@@ -16,7 +16,7 @@
       "title": "third poll",
       "description": "a poll to test",
       "active": true,
-      "creator": "sahar.rajabi@gmail.com"
+      "creator": "sahar.rajabi76@gmail.com"
     }
   },
   {
@@ -26,7 +26,7 @@
       "title": "second poll",
       "description": "a poll to test",
       "active": false,
-      "creator": "saharsamr@gmail.com"
+      "creator": "sahar.rajabi76@gmail.com"
     }
   },
   {
@@ -36,7 +36,7 @@
       "title": "forth poll",
       "description": "a poll to test",
       "active": false,
-      "creator": "saharsamr@gmail.com"
+      "creator": "sahar.rajabi76@gmail.com"
     }
   }
 ]
