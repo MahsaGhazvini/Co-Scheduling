@@ -26,7 +26,10 @@ router.post('/', function(req, res, next) {
                     option.save();
                     form.active= false;
                     form.save();
-                    mail({user: "user", pass: "pass"},findMembers(formId), "close", );
+                    findMembers(formId).then(members => {
+                        console.log(members);
+                        mail(members, "close");
+                    });
                     return res.status(200).json({"message":'Successful'});
                 }
             });

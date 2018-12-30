@@ -17,7 +17,7 @@ class DefaultNavbar extends Component {
 
     render() {
         return (
-            <div className="navbar def-nav">
+            <div className="navbar def-nav" id="header">
                 <div className="default">
                     <LogoContainer/>
                 </div>

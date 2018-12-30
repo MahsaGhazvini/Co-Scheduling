@@ -38,10 +38,10 @@ class ListPage extends Component {
 
     render() {
         return (
-            <div className="list-page">
+            <div>
                 <DefaultNavbar/>
                 <TitleComponent title='لیست جلسات'/>
-                <div className="content">
+                <div className="content-container">
                     <PollList pollsInfo={this.state.activatePollsInfo} message={"برای ورود به صفحه‌ی هر نظرسنجی فعال روی آن کلیک کنید"} server={'vote'}/>
                     <PollList pollsInfo={this.state.deactivatePollsInfo} message={"...نظرسنجی‌های غیرفعال..."} server={'vote'}/>
                     <PollList pollsInfo={this.state.manageActivatePollsInfo} message={"برای ورود به صفحه‌ی مدیریت هر نظرسنجی فعال روی آن کلیک کنید"} server={'managePolls'}/>

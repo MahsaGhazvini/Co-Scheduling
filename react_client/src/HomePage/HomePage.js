@@ -27,7 +27,7 @@ class HomePage extends Component {
             <div>
                 <DefaultNavbar/>
                 <TitleComponent title="ورود"/>
-                <div className = "content container">
+                <div className = "content-container container">
                     <div className = "login container">
                         <div className = "login-box">
                             <div className = "email-input">
