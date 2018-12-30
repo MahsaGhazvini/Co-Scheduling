@@ -12,7 +12,7 @@ class PollList extends Component {
             )
         }
         return (
-            <div className="more-info">
+            <div className="more-info container">
                 <span className="title" style={{display: (this.props.pollsInfo.length === 0)? 'none': 'flex'}}>{this.props.message}</span>
                 <div className="row">
                     {items}
