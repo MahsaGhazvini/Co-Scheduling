@@ -8,6 +8,7 @@
 }
 
 .more-info{
+    margin-bottom: 30px;
 }
 
 .title {
@@ -40,7 +41,7 @@
     margin-right: 30px;
     border-style: inset;
     border-width: 1px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(137, 154, 99,0.5);
 }
 
 p {
@@ -51,13 +52,8 @@ p {
     line-height: 26.4px;
 }
 
-.card-body{
-    flex: 1 1 auto;
-    padding: 1.25rem;
-}
-
 .add-poll{
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgb(137, 154, 99);
     box-shadow: 0 2px 80px rgba(0,0,0,0.1);
     color:white;
     text-align: center;
@@ -74,4 +70,16 @@ p {
 .card-body a{
     text-decoration: none;
     color: black;
+}
+a.card-body.line{
+    padding: 0;
+}
+
+.poll-list-view{
+    padding: 20px 50px;
+
+}
+
+.list-page-view{
+    margin-bottom: 100px;
 }

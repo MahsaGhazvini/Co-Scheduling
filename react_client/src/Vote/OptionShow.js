@@ -34,12 +34,20 @@ class OptionShow extends Component {
                         </div>
                         <hr/>
                         <div className="row">
-                            <div className="col-md-12 deal-type">
-                                <input id={"notVoted"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="notVoted" onChange={this.handleRadioChange} className="input"/><span className="white-color radio-box">بدون نظر</span>
+                            <div className="col-md-12">
+                                <div className="col-md-6 float-right">
+                                    <input id={"notVoted"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="notVoted" onChange={this.handleRadioChange} className="input"/><span className="white-color radio-box">بدون نظر</span>
+                                </div>
+                                <div className="col-md-6 float-left">
+                                    <input id={"maybe"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="maybe" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">شاید بتوانم</span>
+                                </div>
+                                <div className="col-md-6 float-left">
                                 <input id={"agree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="agree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">می‌توانم</span>
-                                <input id={"disagree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="disagree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">نمی‌توانم</span>
-                                <input id={"maybe"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="maybe" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">شاید بتوانم</span>
-                            </div>
+                                </div>
+                                <div className="col-md-6 float-left">
+                                    <input id={"disagree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="disagree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">نمی‌توانم</span>
+                                </div>
+                                </div>
                         </div>
                     </div>
                 </div>

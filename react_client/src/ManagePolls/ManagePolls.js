@@ -44,17 +44,28 @@ class ManagePolls extends Component {
 
     render() {
         return (
-            <div className="body-more-info">
+            <div id="managePolls-view">
                 <DefaultNavbar/>
                 <TitleComponent title='مدیریت جلسه'/>
-                <div className="container">
-                    <div className="row col-md-12">
-                        <div className="col-md-6" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
-                            <span className = "tex-title">عنوان</span> <span>{this.state.title}</span>
-                            <span className = "tex-title">توضیحات</span> <span>{this.state.description}</span>
+                <div className="container content-container">
+                        <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
+
+                            <div className = "poll-title">
+                                <span className="col-md-6" style={{float:"right"}}>
+                                    عنوان
+                                </span>
+                                <span className="col-md-6" >{this.state.title}</span>
+                            </div>
+
+                            <hr/>
+                            <div className = "poll-info">
+                                <span className="col-md-6" style={{float:"right"}}>
+                                توضیحات
+                                </span>
+                                <span className="col-md-6" >{this.state.description}</span>
+                            </div>
                         </div>
                         <ManageOptionList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
-                    </div>
                 </div>
             </div>
         );

@@ -4,6 +4,7 @@ import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
 import './../Styles/common.css';
 import OptionsList from './OptionsList';
+
 class Vote extends Component {
     constructor(){
         super()
@@ -33,18 +34,28 @@ class Vote extends Component {
 
     render() {
         return (
-            <div className="body-more-info">
+            <div id="vote-view">
                 <DefaultNavbar/>
                 <TitleComponent title='جزئیات جلسه'/>
-                <div className="container description">
-                    <div className="col-md-12">
-                        <div className="" style={{display: (this.state.formId === -1)? 'none': 'flex'}}>
+                <div className="container content-container">
+                        <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
+                            <div className = "poll-title">
+                                <span className="col-md-6" style={{float:"right"}}>
+                                    عنوان
+                                </span>
+                                <span className="col-md-6" >{this.state.title}</span>
+                            </div>
 
-                            <div className = "col-md-6">عنوان</div> <div>{this.state.title}</div>
-                            <div className = "col-md-6">توضیحات</div> <div>{this.state.description}</div>
+                            <hr/>
+                            <div className = "poll-info">
+                                <span className="col-md-6" style={{float:"right"}}>
+                                توضیحات
+                                </span>
+                                <span className="col-md-6" >{this.state.description}</span>
+                            </div>
                         </div>
                         <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
-                    </div>
+
                 </div>
             </div>
         );

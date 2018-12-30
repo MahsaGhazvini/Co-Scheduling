@@ -3,6 +3,7 @@ import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
 import './../Styles/common.css';
 import './../Styles/login.css';
+
 class HomePage extends Component {
     constructor(props){
         super(props);
@@ -27,7 +28,7 @@ class HomePage extends Component {
             <div>
                 <DefaultNavbar/>
                 <TitleComponent title="ورود"/>
-                <div className = "content container">
+                <div className = "content-container container">
                     <div className = "login container">
                         <div className = "login-box">
                             <div className = "email-input">
