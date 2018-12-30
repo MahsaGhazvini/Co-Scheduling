@@ -3,8 +3,9 @@ const request = require('supertest')(require('./../../../app'));
 const sinon = require('sinon');
 const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
+const should = require('should')
 
-describe('POST /comment/addComment', function () {
+describe('GET /comment/getComments', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -31,31 +32,27 @@ describe('POST /comment/addComment', function () {
         { 'logging': false }
     );
 
-    it('should add a comment to an option', function(done) {
+    it('should return list of comments on an option id', function(done) {
         request
-            .post('/comment/addComment')
-            .send({
-                owner:"sahar.rajabi76@gmail.com",
-                content: "seems to be best for me",
-                optionId: 2
-            })
+            .get('/comment/getComments?email=sahar.rajabi76@gmail.com&optionId=2')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
-            .expect(200, {message: "successful"})
+            .expect(200)
             .end(function(err, res) {
                 if (err) return done(err);
+                if (res.body.length > 0){
+                    res.body[0].should.have.property("id");
+                    res.body[0].should.have.property("content");
+                    res.body[0].should.have.property("owner");
+                }
                 done();
             });
     });
 
-    it('should prevent a user that is not a member of poll to add comment', function(done) {
+
+    it('should prevent someone from getting the comments when is not a member of that poll', function(done) {
         request
-            .post('/comment/addComment')
-            .send({
-                owner:"sahar.rajabi76@gmail.com",
-                content: "seems to be best for me",
-                optionId: 2
-            })
+            .get('/comment/getComments?email=sahar.rajabi@gmail.com&optionId=2')
             .set('Accept', 'application/json')
             .expect('Content-Type', /text/)
             .expect(400)
@@ -63,5 +60,4 @@ describe('POST /comment/addComment', function () {
                 if (err) return done(err);
                 done();
             });
-    });
-});
+    });});

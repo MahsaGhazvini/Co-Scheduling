@@ -4,7 +4,7 @@ const sinon = require('sinon');
 const path = require('path');
 const sequelizeMockingMocha = require('sequelize-mocking').sequelizeMockingMocha;
 
-describe('POST /comment/addComment', function () {
+describe('POST /comment/addReply', function () {
 
     const Database = require('../../../utils/DBConnection');
 
@@ -27,17 +27,19 @@ describe('POST /comment/addComment', function () {
             path.resolve(path.join(__dirname, '../../unit/mockedData/pollOptions.json')),
             path.resolve(path.join(__dirname, '../../unit/mockedData/votes.json')),
             path.resolve(path.join(__dirname, '../../unit/mockedData/comments.json')),
+            path.resolve(path.join(__dirname, '../../unit/mockedData/replies.json')),
         ],
         { 'logging': false }
     );
 
-    it('should add a comment to an option', function(done) {
+    it('should add a reply to an existing comment', function(done) {
         request
-            .post('/comment/addComment')
+            .post('/comment/addReply')
             .send({
                 owner:"sahar.rajabi76@gmail.com",
-                content: "seems to be best for me",
-                optionId: 2
+                content: "me too",
+                commentId: 1,
+                replyTo: null
             })
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
@@ -48,13 +50,14 @@ describe('POST /comment/addComment', function () {
             });
     });
 
-    it('should prevent a user that is not a member of poll to add comment', function(done) {
+    it('should prevent a user that is not a member of poll to add replies', function(done) {
         request
             .post('/comment/addComment')
             .send({
-                owner:"sahar.rajabi76@gmail.com",
-                content: "seems to be best for me",
-                optionId: 2
+                owner:"sahar.rajabi@gmail.com",
+                content: "not me!",
+                commentId: 1,
+                replyTo: null
             })
             .set('Accept', 'application/json')
             .expect('Content-Type', /text/)
