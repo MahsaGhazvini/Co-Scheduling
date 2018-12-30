@@ -29,6 +29,9 @@
 .float-left{
     float: left;
 }
+.text-left{
+    text-align: left;
+}
 .margin-bottom{
     margin-bottom: 30px;
 }
@@ -62,9 +65,28 @@ footer {
 #vote-view .input[type=radio]{
     margin-left: 5px;
 }
-#vote-view .poll-title{
+
+#vote-view, #managePolls-view .poll-title{
     padding: 10px 0 0px 0;
 }
-#vote-view .poll-info{
+#vote-view, #managePolls-view .poll-info{
     padding: 20px 0 30px 0;
+}
+
+.card-body{
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-body a{
+    text-decoration: none;
+    color: black;
+}
+a.card-body.line{
+    padding: 0;
+}
+
+div.card.h-100.poll-box{
+    border-color:rgba(137, 154, 99,0.5) ;
+    margin-bottom: 25px;
 }

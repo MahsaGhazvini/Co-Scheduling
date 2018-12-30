@@ -32,9 +32,7 @@
     height: 50px;
     width: 100%;
 }
-div.card.h-100.poll-box{
-    border-color:rgba(137, 154, 99,0.5) ;
-}
+
 .more-info .poll-box hr{
     display: block;
     margin-top: 0.5em;
@@ -52,11 +50,6 @@ p {
     font-variant: normal;
     font-weight: bold;
     line-height: 26.4px;
-}
-
-.card-body{
-    flex: 1 1 auto;
-    padding: 1.25rem;
 }
 
 .add-poll{

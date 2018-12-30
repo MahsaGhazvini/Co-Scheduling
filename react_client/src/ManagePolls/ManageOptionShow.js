@@ -26,14 +26,14 @@ class ManageOptionShow extends Component {
         return (
             <div className="col-lg-6">
                 <div className="box1">
-                    <div className={"card h-100 poll-box"} style={{"background-color": (this.state.isFinalized)? 'green': 'white'}}>
+                    <div className={"card h-100 poll-box"} style={{"background-color": (this.state.isFinalized)? 'rgb(137, 154, 99)': 'white'}}>
                         <div className="card-body" onClick={this.handleClick}>
-                            <div className="card-body line">{this.props.option.data.description}</div>
+                            <div className="card-body line col-md-12">{this.props.option.data.description}</div>
                             <hr/>
-                            <div class="row"> <span>تعداد افراد موافق:</span> <span>{this.state.votes.agree}</span> </div>
-                            <div className="row"><span>تعداد افراد مخالف:</span> <span>{this.state.votes.disagree}</span></div>
-                            <div className="row"><span>تعداد افراد خنثی:</span> <span>{this.state.votes.maybe}</span></div>
-                            <div className="row"><span>تعداد افراد رای نداده:</span> <span>{this.state.votes.notVoted}</span></div>
+                            <div className="col-md-6" style={{float:"right"}}> <span>تعداد افراد موافق:</span> <span>{this.state.votes.agree}</span> </div>
+                            <div className=""><span>تعداد افراد مخالف:</span> <span>{this.state.votes.disagree}</span></div>
+                            <div className="col-md-6" style={{float:"right"}}><span>تعداد افراد خنثی:</span> <span>{this.state.votes.maybe}</span></div>
+                            <div className=""><span>تعداد افراد رای نداده:</span> <span>{this.state.votes.notVoted}</span></div>
                         </div>
                     </div>
                 </div>
