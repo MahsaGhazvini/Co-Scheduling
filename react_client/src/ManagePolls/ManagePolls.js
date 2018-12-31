@@ -5,6 +5,7 @@ import TitleComponent from '../Common/TitleComponent';
 
 import ManageOptionList from './ManageOptionList';
 import './../Styles/common.css';
+import Footer from "../Common/Footer";
 
 class ManagePolls extends Component {
     constructor(){
@@ -48,25 +49,27 @@ class ManagePolls extends Component {
                 <DefaultNavbar/>
                 <TitleComponent title='مدیریت جلسه'/>
                 <div className="container content-container">
-                        <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
+                    <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
 
-                            <div className = "poll-title">
+                        <div className = "poll-title">
                                 <span className="col-md-6" style={{float:"right"}}>
                                     عنوان
                                 </span>
-                                <span className="col-md-6" >{this.state.title}</span>
-                            </div>
+                            <span className="col-md-6" >{this.state.title}</span>
+                        </div>
 
-                            <hr/>
-                            <div className = "poll-info">
+                        <hr/>
+                        <div className = "poll-info">
                                 <span className="col-md-6" style={{float:"right"}}>
                                 توضیحات
                                 </span>
-                                <span className="col-md-6" >{this.state.description}</span>
-                            </div>
+                            <span className="col-md-6" >{this.state.description}</span>
                         </div>
-                        <ManageOptionList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
+                    </div>
+                    <ManageOptionList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
                 </div>
+
+                <Footer/>
             </div>
         );
     }

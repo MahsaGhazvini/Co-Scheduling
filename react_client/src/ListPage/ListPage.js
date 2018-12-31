@@ -7,7 +7,7 @@ import PollList from './PollList';
 import './../Styles/common.css';
 import './../Styles/login.css';
 import './../Styles/listStyle.css';
-
+import Footer from "../Common/Footer";
 class ListPage extends Component {
     constructor(){
         super()
@@ -20,7 +20,7 @@ class ListPage extends Component {
         }
     }
 
-     getPolls(microServiceName, email, active, stateName) {
+    getPolls(microServiceName, email, active, stateName) {
         const searchLink = '/' + microServiceName + '?email=' + email + '&active=' + active;
         Network.GetRequest(searchLink).then((res)=>{
             this.setState({[stateName] : res});
@@ -48,6 +48,8 @@ class ListPage extends Component {
                     <PollList pollsInfo={this.state.manageDeactivatePollsInfo} message={"...مدیریت نظرسنجی‌های غیرفعال..."} server={'managePolls'}/>
                     <div className="container col-md-6 col-md-offset-3 add-poll"><a href="/addPoll">ایجاد نظرسنجی جدید</a></div>
                 </div>
+
+                <Footer/>
             </div>
         );
     }

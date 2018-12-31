@@ -4,6 +4,7 @@ import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
 import './../Styles/common.css';
 import OptionsList from './OptionsList';
+import Footer from "../Common/Footer";
 
 class Vote extends Component {
     constructor(){
@@ -38,25 +39,27 @@ class Vote extends Component {
                 <DefaultNavbar/>
                 <TitleComponent title='جزئیات جلسه'/>
                 <div className="container content-container">
-                        <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
-                            <div className = "poll-title">
+                    <div className="card h-100 poll-box" style={{marginBottom:"50px",display: (this.state.formId === -1)? 'none': 'flex'}}>
+                        <div className = "poll-title">
                                 <span className="col-md-6" style={{float:"right"}}>
                                     عنوان
                                 </span>
-                                <span className="col-md-6" >{this.state.title}</span>
-                            </div>
+                            <span className="col-md-6" >{this.state.title}</span>
+                        </div>
 
-                            <hr/>
-                            <div className = "poll-info">
+                        <hr/>
+                        <div className = "poll-info">
                                 <span className="col-md-6" style={{float:"right"}}>
                                 توضیحات
                                 </span>
-                                <span className="col-md-6" >{this.state.description}</span>
-                            </div>
+                            <span className="col-md-6" >{this.state.description}</span>
                         </div>
-                        <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
+                    </div>
+                    <OptionsList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
 
                 </div>
+
+                <Footer/>
             </div>
         );
     }
