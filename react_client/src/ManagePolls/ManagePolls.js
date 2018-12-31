@@ -66,6 +66,7 @@ class ManagePolls extends Component {
                             </div>
                         </div>
                         <ManageOptionList options={this.state.options} formId={this.state.formId} isActive={this.state.active}/>
+                        <a id="editLink" href={'/editPoll/'+this.state.formId} className="card-body line">ویرایش</a>
                 </div>
             </div>
         );

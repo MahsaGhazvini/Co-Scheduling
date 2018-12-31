@@ -192,3 +192,11 @@ div.card.h-100.poll-box{
 .arrayShow .addBtn:hover {
     background-color: #bbb;
 }
+
+#editLink {
+    color: rgb(126, 128, 76);
+    float: left;
+    margin-top: -30px;
+    margin-left: 30px;
+    font-size: 20px;
+}
