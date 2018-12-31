@@ -39,7 +39,7 @@ class HomePage extends Component {
 
     newItem(event,inputName, inputValue, newOrOld){
         var li = document.createElement("li");
-        li.className = inputName+" "+newOrOld;//TODO: is that ok?
+        li.className = inputName+" "+newOrOld;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         if (inputValue === '') {
@@ -118,6 +118,15 @@ class HomePage extends Component {
             const deleted = this.getChangeElement("addOption","old","none");
             const added = this.getChangeElement("addOption","new","block");
             console.log(this.state.title, this.state.description, "-> ",deleted, added);
+            let data = new URLSearchParams();
+            data.append("title", this.state.title);
+            data.append("description", this.state.description);
+            data.append("deletedOptions", JSON.stringify(deleted));
+            data.append("addedOptions", JSON.stringify(added));
+            Network.PostRequest('http://localhost:3000/editPoll', data).then((res)=>{
+                console.log(res);
+                this.props.history.push({pathname: '/listPage'});
+            });
         }
     }
 
@@ -160,9 +169,9 @@ class HomePage extends Component {
 
 
                 </div>
-                        <div className="">
-                            <input type="submit" value={(this.props.titleComponent)? this.props.titleComponent : "ثبت نظرسنجی"} onClick={this.submitForm} className="submit add-poll-submit"/>
-                        </div>
+                    <div className="">
+                        <input type="submit" value={(this.props.titleComponent)? this.props.titleComponent : "ثبت نظرسنجی"} onClick={this.submitForm} className="submit add-poll-submit"/>
+                    </div>
                 </div>
             </div>
         );
