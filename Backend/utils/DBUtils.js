@@ -91,6 +91,22 @@ async function getAllVotes() {
     return votes.map(votes => votes.dataValues);
 }
 
+async function getPollFormIdByOption(pollOptionId){
+    let pollOption = await PollOption.findByPrimary(pollOptionId);
+    if(pollOption){
+        return pollOption.get("pollFormId");
+    }
+    return null;
+}
+
+async function getPollFormIdByComment(commentId){
+    let comment = await CommentOption.findByPrimary(commentId);
+    if(comment) {
+        let pollOptionId = await comment.get("optionId");
+        return getPollFormIdByOption(pollOptionId);
+    }
+}
+
 module.exports = {
     createUser: createUser,
     getAllUsers: getAllUsers,
@@ -104,4 +120,6 @@ module.exports = {
     getAllVotes: getAllVotes,
     createCommentOption: createCommentOption,
     createReplyComment: createReplyComment,
+    getPollFormIdByOption: getPollFormIdByOption,
+    getPollFormIdByComment: getPollFormIdByComment,
 };

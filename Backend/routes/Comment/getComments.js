@@ -1,37 +1,34 @@
-const Sequelize = require('sequelize');
 const express = require('express');
 const router = express.Router();
 const Comments = require('../../models/CommentOption');
-const PollOption = require('../../models/PollOption');
 const VotingRight = require('../../models/VotingRight');
+const DBUtils = require('../../utils/DBUtils');
 
-router.get('/', function(req, res, next) {
-    VotingRight.findAll({
+router.get('/', async function(req, res, next) {
+    const email = req.query.email;
+    const optionId = req.query.optionId;
+
+    const pollFormId = await DBUtils.getPollFormIdByOption(optionId);
+    const permissions = await VotingRight.findOne({
         where:{
-            userId: req.query.email
+            userId: email,
+            pollFormId: pollFormId
         }
-    }).then(async permissions => {
-        let formPermissions = await permissions.map(p => {return p.pollFormId});
-        Comments.findAll({
-            where:{
-                optionId: req.query.optionId
-            },
-            include:{
-                model: PollOption,
-            }
-        }).then(function (result) {
-            res.status(200).json(result.map(comment=>{
-                if(formPermissions.indexOf(comment.pollOption.pollFormId) < 0)
-                    return null;
-                else
-                    return {
-                        "id": comment.id,
-                        "owner": comment.owner,
-                        "content": comment.content
-                    };
-            }).filter(x => x));
-        });
     });
+    if(permissions){
+        let comments = await Comments.findAll({
+            where: {optionId: optionId}
+        });
+        comments = await comments.map(comment => {
+            return {
+                "id": comment.get("id"),
+                "owner": comment.get("owner"),
+                "content": comment.get("content")
+            }
+        });
+        res.status(200).json(comments);
+    }
+    res.status(400).json({'message': 'failed'});
 });
 
 module.exports = router;

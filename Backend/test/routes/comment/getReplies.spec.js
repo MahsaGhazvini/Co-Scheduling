@@ -35,7 +35,7 @@ describe('GET /comment/getReplies', function () {
 
     it('should return list of replies on something', function(done) {
         request
-            .get('/comment/getComments?email=sahar.rajabi76@gmail.com&commentId=1')
+            .get('/comment/getReplies?email=sahar.rajabi76@gmail.com&commentId=1&replyTo=null')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
@@ -54,10 +54,10 @@ describe('GET /comment/getReplies', function () {
 
     it('should prevent someone from getting the replies when is not a member of that poll', function(done) {
         request
-            .get('/comment/getComments?email=sahar.rajabi@gmail.com&commentId=2')
+            .get('/comment/getReplies?email=sahar.rajabi@gmail.com&commentId=2&replyTo=null')
             .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
-            .expect(400)
+            .expect('Content-Type', /json/)
+            .expect(400, {'message': 'failed'})
             .end(function(err, res) {
                 if (err) return done(err);
                 done();

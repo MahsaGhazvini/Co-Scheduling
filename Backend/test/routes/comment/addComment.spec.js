@@ -52,12 +52,12 @@ describe('POST /comment/addComment', function () {
         request
             .post('/comment/addComment')
             .send({
-                owner:"sahar.rajabi76@gmail.com",
+                owner:"sahar.rajabi@gmail.com",
                 content: "seems to be best for me",
                 optionId: 2
             })
             .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(400)
             .end(function(err, res) {
                 if (err) return done(err);

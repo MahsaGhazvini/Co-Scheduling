@@ -54,8 +54,8 @@ describe('GET /comment/getComments', function () {
         request
             .get('/comment/getComments?email=sahar.rajabi@gmail.com&optionId=2')
             .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
-            .expect(400)
+            .expect('Content-Type', /json/)
+            .expect(400, {'message': 'failed'})
             .end(function(err, res) {
                 if (err) return done(err);
                 done();

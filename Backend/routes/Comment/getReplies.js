@@ -1,42 +1,39 @@
-const Sequelize = require('sequelize');
 const express = require('express');
 const router = express.Router();
-const Comments = require('../../models/CommentOption');
 const Replies = require('../../models/ReplyComment');
-const PollOption = require('../../models/PollOption');
 const VotingRight = require('../../models/VotingRight');
+const DBUtils = require('../../utils/DBUtils');
 
-router.get('/', function(req, res, next) {
-    VotingRight.findAll({
-        where:{
-            userId: req.query.email
+router.get('/', async function(req, res, next) {
+    const email = req.query.email;
+    const comment = req.query.commentId;
+    const reply = req.query.replyTo;
+
+    const pollFormId = await DBUtils.getPollFormIdByComment(comment);
+    const permissions = await VotingRight.findOne({
+        where: {
+            userId: email,
+            pollFormId: pollFormId
         }
-    }).then(async permissions => {
-        let formPermissions = await permissions.map(p => {return p.pollFormId});
-        Replies.findAll({
-            where:{
-                commentId: req.query.commentId
-            },
-            include:{
-                model: Comments,
-                include:{
-                    model: PollOption,
-                }
-            }
-        }).then(function (result) {
-            res.status(200).json(result.map(reply=>{
-                if(formPermissions.indexOf(reply.commentOption.pollOption.pollFormId) < 0)
-                    return null;
-                else
-                    return {
-                        "id": reply.id,
-                        "owner": reply.owner,
-                        "content": reply.content,
-                        "replyTo": reply.replyTo
-                    };
-            }).filter(x => x));
-        });
     });
+    if(permissions){
+        let replies = await Replies.findAll({
+            where: {
+                commentId: comment,
+                replyTo: reply
+            }
+        });
+        replies = await replies.map(reply => {
+            return {
+                "id": reply.get("id"),
+                "owner": reply.get("owner"),
+                "content": reply.get("content"),
+                "replyTo": reply.get("replyTo")
+            }
+        });
+        res.status(200).json(replies);
+    }
+    res.status(400).json({'message': 'failed'});
 });
 
 module.exports = router;

@@ -7,5 +7,14 @@
       "owner": "sahar.rajabi76@gmail.com",
       "optionId": 2
     }
+  },
+  {
+    "model": "commentOption",
+    "data": {
+      "id": 2,
+      "content": "test data",
+      "owner": "sahar.rajabi76@gmail.com",
+      "optionId": 2
+    }
   }
 ]

@@ -60,7 +60,7 @@ describe('POST /comment/addReply', function () {
                 replyTo: null
             })
             .set('Accept', 'application/json')
-            .expect('Content-Type', /text/)
+            .expect('Content-Type', /json/)
             .expect(400)
             .end(function(err, res) {
                 if (err) return done(err);
