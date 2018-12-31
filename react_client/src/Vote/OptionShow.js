@@ -16,7 +16,7 @@ const customStyles = {
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
         height                : '400px',
-        width                 : '700px'
+        width                 : '75%'
     }
 };
 
@@ -26,7 +26,8 @@ class OptionShow extends Component {
         console.log(props.option);
         this.state = {
             ourVote: props.option.ourChoice,
-            modalIsOpen: false
+            modalIsOpen: false,
+            replyBox: false
         };
         // radio.value(props.option.ourChoice);
         this.handleRadioChange = this.handleRadioChange.bind(this);
@@ -36,6 +37,7 @@ class OptionShow extends Component {
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.showReplyBox = this.showReplyBox.bind(this);
     }
 
     handleRadioChange(event){
@@ -59,6 +61,11 @@ class OptionShow extends Component {
     closeModal() {
         this.setState({modalIsOpen: false});
     }
+
+    showReplyBox(){
+        this.setState({replyBox : true});
+    }
+
     render() {
         return (
             <div className="col-lg-6 col-md-6">
@@ -78,7 +85,7 @@ class OptionShow extends Component {
                                     <button className="float-left" onclick={this.showCommentBox}>نظر</button>
                                     <button>نظرات</button>*/}
                                     <div>
-                                        <button onClick={this.openModal}>نظرات</button>
+                                        <button onClick={this.openModal} className="sage-button btn">نظرات</button>
                                         <Modal
                                             isOpen={this.state.modalIsOpen}
                                             onAfterOpen={this.afterOpenModal}
@@ -86,25 +93,42 @@ class OptionShow extends Component {
                                             style={customStyles}
                                             contentLabel="Example Modal"
                                         >
-                                            <div className="col-md-12">
+                                            <div className="col-md-12" style={{"margin-bottom":"25px"}}>
 
-                                                <button onClick={this.closeModal} className="float-left" >&times;</button>
+                                                <button onClick={this.closeModal} className="float-left sage-button" >&times;</button>
                                                 <h2 ref={subtitle => this.subtitle = subtitle}>نظرات</h2>
 
 
                                             </div>
-                                            <div className="col-md-12 comment-box">
+                                            <div className="comment-box">
+                                            <div style={{"padding-right":"10px"}}>
+                                            کاربر:
+                                            <span className="sage-color f12">aa@gmail.com</span>
+                                            </div>
+                                            <div className="col-md-12 comment-text-box">
+
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
+                                            </div>
+                                                <button className="sage-button" style={{margin:"10px"}}>افزودن نظر</button>
+                                                <button className="sage-button" style={{margin:"10px"}} onClick={this.showReplyBox}>پاسخ ها</button>
+
+                                                <div className="reply-box" style={{display: this.state.replyBox ? 'block' : 'none' }}>
+                                                    <div className="sage-color">
+                                                    کاربر:
+                                                    sss@gmail.com
+                                                    </div>
+                                                    دوستان عزیز، شتاب‌زده عمل نکردم و پس از دو ماه استفاده نظر خودم را اعلام می‌کنم. این پاوربانک علی‌رغم زیبایی و سبکی متأسفانه ضعیف است. زمانی‌که گوشی را با آن شارژ می‌کنم، زودتر از حالت معمول شارژ خالی می‌کند.این پاور پس از یک زمان شارژ طولانی بازدهی خوبی هم ندارد.
+                                                </div>
                                             </div>
                                             <div className="col-md-12 comment-box">
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
 
                                             </div>
-                                            <div className="reply-box">
+                                            {/*<div className="reply-box" style={{display: this.state.replyBox ? 'block' : 'none' }}>
                                                 دوستان عزیز، شتاب‌زده عمل نکردم و پس از دو ماه استفاده نظر خودم را اعلام می‌کنم. این پاوربانک علی‌رغم زیبایی و سبکی متأسفانه ضعیف است. زمانی‌که گوشی را با آن شارژ می‌کنم، زودتر از حالت معمول شارژ خالی می‌کند.این پاور پس از یک زمان شارژ طولانی بازدهی خوبی هم ندارد.
-                                            </div>
+                                            </div>*/}
                                             <form>
                                                 <input className="add-reply-box" />
                                             </form>
