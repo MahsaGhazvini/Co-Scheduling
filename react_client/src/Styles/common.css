@@ -21,7 +21,6 @@
     border-radius: 10px;
 }
 .input-block{
-
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -50,9 +49,9 @@ span.title{
     margin-bottom: 10px;
 }
 
-footer {
-    padding:50px 0 20px 0;
-    position: fixed;
+footer.container-fluid {
+    padding:50px 150px 40px 150px;
+    margin-top:100px;
     left: 0;
     bottom: 0;
     background-color: rgba(128, 128, 128,0.1)
@@ -66,10 +65,10 @@ footer {
     margin-left: 5px;
 }
 
-#vote-view, #managePolls-view .poll-title{
+#vote-view .poll-title, #managePolls-view .poll-title{
     padding: 10px 0 0px 0;
 }
-#vote-view, #managePolls-view .poll-info{
+#vote-view .poll-info, #managePolls-view .poll-info{
     padding: 20px 0 30px 0;
 }
 
@@ -89,4 +88,27 @@ a.card-body.line{
 div.card.h-100.poll-box{
     border-color:rgba(137, 154, 99,0.5) ;
     margin-bottom: 25px;
+}
+
+.sage-color {
+    color:rgb(137, 154, 99) ;
+}
+
+.comment-box{
+    margin : 25px 0;
+    padding:25px 0;
+    height:150px;
+    overflow:auto;
+}
+
+.reply-box{
+    border-top : 1px solid rgba(137, 154, 99,0.5);
+    padding:25px 15% 20px 0;
+}
+
+.add-reply-box{
+    margin:25px 15% 20px auto;
+    height: 100px;
+    width: 85%;
+    box-sizing: border-box;
 }
