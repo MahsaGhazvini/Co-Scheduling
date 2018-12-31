@@ -111,7 +111,7 @@ class HomePage extends Component {
                     </div>
 
 
-                <div className=" row margin-bottom">
+                <div className=" row margin-bottom arrayShow">
                     {/*<div id="myDIV" className="header">*/}
                         {/*<input type="text" id="addMail" placeholder="Title..."/>*/}
                             {/*<span onClick={this.addMail} className="addBtn">Add</span>*/}
@@ -121,37 +121,21 @@ class HomePage extends Component {
                     {/*</ul>*/}
                     <div className="input-box col-md-6">
                         <div id="myDIV" className="header">
-                            <input type="text" id="addMail" placeholder="Title..."/>
+                            <input type="text" id="addMail" placeholder="ایمیل بعدی را وارد کنید..."/>
                             <span onClick={this.addMail} className="addBtn">Add</span>
                         </div>
 
-                        <ul id="myUL-addMail">
-                        </ul>
-                        {/*<div className=" input">*/}
-                            {/*<input type="text" id="email" className="input-tag input-radius col-md-7 " name="email" onChange={this.handleChange} value={this.state.email} placeholder="ایمیل بعدی را وارد کنید."/>*/}
-                            {/*<input type="submit" value="اضافه کردن ایمیل" onClick={this.submitAddMail} className="col-md-4 submit add-poll-submit"/>*/}
-                        {/*</div>*/}
-                        {/*<div className=" input">*/}
-                            {/*<input id="members" type="text" className="input-tag input-radius input-block" name="members" value={this.state.members} placeholder="اعضا"/>*/}
-                        {/*</div>*/}
+                        <ul id="myUL-addMail"> </ul>
                     </div>
 
                     <div className=" input-box col-md-6">
 
                         <div id="myDIV" className="header">
-                            <input type="text" id="addOption" placeholder="Title..."/>
+                            <input type="text" id="addOption" placeholder="گزینه بعدی را وارد کنید..."/>
                             <span onClick={this.addOption} className="addBtn">Add</span>
                         </div>
 
-                        <ul id="myUL-addOption">
-                        </ul>
-                        {/*<div className=" input">*/}
-                            {/*<input type="text" id="option" className="input-tag input-radius col-md-7" name="option" onChange={this.handleChange} value={this.state.option} placeholder="گزینه بعدی را وارد کنید."/>*/}
-                            {/*<input type="submit" value="اضافه کردن گزینه" onClick={this.submitAddOption} className="col-md-4 submit add-poll-submit"/>*/}
-                        {/*</div>*/}
-                        {/*<div className=" input">*/}
-                            {/*<input id="options" type="text" className="input-tag input-radius input-block" name="options" value={this.state.options} placeholder="گزینه‌ها"/>*/}
-                        {/*</div>*/}
+                        <ul id="myUL-addOption"> </ul>
                     </div>
 
                 </div>
