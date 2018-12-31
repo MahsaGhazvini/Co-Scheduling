@@ -27,7 +27,8 @@ class OptionShow extends Component {
         this.state = {
             ourVote: props.option.ourChoice,
             modalIsOpen: false,
-            replyBox: false
+            replyBox: false,
+            addReply : false
         };
         // radio.value(props.option.ourChoice);
         this.handleRadioChange = this.handleRadioChange.bind(this);
@@ -38,6 +39,7 @@ class OptionShow extends Component {
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.showReplyBox = this.showReplyBox.bind(this);
+        this.showAddReplyBox = this.showAddReplyBox.bind(this);
     }
 
     handleRadioChange(event){
@@ -66,6 +68,9 @@ class OptionShow extends Component {
         this.setState({replyBox : true});
     }
 
+    showAddReplyBox(){
+        this.setState({addReply : true});
+    }
     render() {
         return (
             <div className="col-lg-6 col-md-6">
@@ -111,7 +116,7 @@ class OptionShow extends Component {
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
                                             </div>
-                                                <button className="sage-button" style={{margin:"10px"}}>افزودن نظر</button>
+                                                <button className="sage-button" style={{margin:"10px"}} onClick={this.showAddReplyBox}>افزودن نظر</button>
                                                 <button className="sage-button" style={{margin:"10px"}} onClick={this.showReplyBox}>پاسخ ها</button>
 
                                                 <div className="reply-box" style={{display: this.state.replyBox ? 'block' : 'none' }}>
@@ -121,17 +126,15 @@ class OptionShow extends Component {
                                                     </div>
                                                     دوستان عزیز، شتاب‌زده عمل نکردم و پس از دو ماه استفاده نظر خودم را اعلام می‌کنم. این پاوربانک علی‌رغم زیبایی و سبکی متأسفانه ضعیف است. زمانی‌که گوشی را با آن شارژ می‌کنم، زودتر از حالت معمول شارژ خالی می‌کند.این پاور پس از یک زمان شارژ طولانی بازدهی خوبی هم ندارد.
                                                 </div>
+
+                                                <form style={{display: this.state.addReply ? 'block' : 'none' }} className="text-area">
+                                                    <textarea name="message" rows="4" cols="60" placeholder="پاسخ به نظر ..."></textarea>
+                                                </form>
                                             </div>
                                             <div className="col-md-12 comment-box">
                                                 سلام. بسیار عالی هستش من گوشی آیفون ۷پلاس رو تقریبا شش بار شارژ میکنم. اندازه بسیار مناسب و قسنگی داره. تنها ایرادش اینه که خودش دیر شارژ میشه حدودا ۸ ساعت طول میکشه سارژش از صفر به ۱۰۰ برسه که به نظر من میشه باهاش کنار اومد میشه شب بزنی به شارژ و صبح ورش داری. من این مدل رو پیشنهاد میکنم.
 
                                             </div>
-                                            {/*<div className="reply-box" style={{display: this.state.replyBox ? 'block' : 'none' }}>
-                                                دوستان عزیز، شتاب‌زده عمل نکردم و پس از دو ماه استفاده نظر خودم را اعلام می‌کنم. این پاوربانک علی‌رغم زیبایی و سبکی متأسفانه ضعیف است. زمانی‌که گوشی را با آن شارژ می‌کنم، زودتر از حالت معمول شارژ خالی می‌کند.این پاور پس از یک زمان شارژ طولانی بازدهی خوبی هم ندارد.
-                                            </div>*/}
-                                            <form>
-                                                <input className="add-reply-box" />
-                                            </form>
                                         </Modal>
                                     </div>
                                 </div>

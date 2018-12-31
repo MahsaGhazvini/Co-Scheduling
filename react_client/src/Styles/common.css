@@ -114,9 +114,9 @@ div.card.h-100.poll-box{
 }
 
 .add-reply-box {
-    margin: 25px 15% 20px auto;
+    margin: 25px 15% 20px 2%;
     height: 100px;
-    width: 85%;
+    width: 80%;
     box-sizing: border-box;
 }
 
@@ -149,4 +149,8 @@ div.card.h-100.poll-box{
 }
 .f12{
     font-size: 12px;
+}
+
+.text-area{
+    margin: 2%;
 }
