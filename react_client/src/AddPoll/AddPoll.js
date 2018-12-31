@@ -15,6 +15,7 @@ class HomePage extends Component {
             description: (this.props.description)? this.props.description : '',
             members_email: (this.props.members_email)? this.props.members_email : [],
             options_title: (this.props.options_title)? this.props.options_title : [],
+            server: (this.props.server === "editPoll")? "editPoll": "createPoll"
         };
         this.handleChange = this.handleChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
@@ -22,6 +23,7 @@ class HomePage extends Component {
         this.addMail = this.addMail.bind(this);
         this.addOption = this.addOption.bind(this);
         this.getVisibleElements = this.getVisibleElements.bind(this);
+        this.getChangeElement = this.getChangeElement.bind(this);
     }
 
     componentDidMount(){
@@ -29,16 +31,15 @@ class HomePage extends Component {
             var i;
             for(i=0;i<this.props.options.length;i++){
                 var option = this.props.options[i];
-                console.log("*****",i,"-->",option);
                 var event;
-                this.newItem(event,"addOption",option.data.description);
+                this.newItem(event,"addOption",option.data.description, "old");
             }
         }
     }
 
-    newItem(event,inputName, inputValue){
+    newItem(event,inputName, inputValue, newOrOld){
         var li = document.createElement("li");
-        li.className = inputName;
+        li.className = inputName+" "+newOrOld;//TODO: is that ok?
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         if (inputValue === '') {
@@ -62,12 +63,12 @@ class HomePage extends Component {
 
     addMail(event){
         var inputValue = document.getElementById("addMail").value;
-        this.newItem(event,"addMail", inputValue);
+        this.newItem(event,"addMail", inputValue, "new");
     }
 
     addOption(event){
         var inputValue = document.getElementById("addOption").value;
-        this.newItem(event,"addOption",inputValue);
+        this.newItem(event,"addOption",inputValue, "new");
     }
 
     getVisibleElements(inputName){
@@ -82,32 +83,49 @@ class HomePage extends Component {
         return arr;
     }
 
+    getChangeElement(inputName, oldOrNew, display){
+        var arr = [];
+        var myNodelist = document.getElementsByClassName(inputName+" "+oldOrNew);
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var div = myNodelist[i];
+            if(div.style.display === display || (display === 'block' && div.style.display !== 'none'))
+                arr.push(div.childNodes[0].nodeValue);
+        }
+        return arr;
+    }
+
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
     }
 
     submitForm(event){
-        let data = new URLSearchParams();
-        this.state.members_email = this.getVisibleElements("addMail").map(mail=> {return {"email": mail}});
-        this.state.options_title = this.getVisibleElements("addOption").map(option => {return {"title": option}});
-        // console.log(this.state.members_email, this.state.options_title);
-        data.append("creator", JSON.stringify({email: localStorage.getItem("email")}));
-        data.append("title", this.state.title);
-        data.append("description", this.state.description);
-        data.append("members", JSON.stringify(this.state.members_email));
-        data.append("options", JSON.stringify(this.state.options_title));
-        //console.log(this.state.members_email);
-        Network.PostRequest('http://localhost:3000/createPoll', data).then((res)=>{
-            console.log(res);
-            this.props.history.push({pathname: '/listPage'});
-        });
+        if(this.state.server === "createPoll"){
+            let data = new URLSearchParams();
+            this.state.members_email = this.getVisibleElements("addMail").map(mail=> {return {"email": mail}});
+            this.state.options_title = this.getVisibleElements("addOption").map(option => {return {"title": option}});
+            data.append("creator", JSON.stringify({email: localStorage.getItem("email")}));
+            data.append("title", this.state.title);
+            data.append("description", this.state.description);
+            data.append("members", JSON.stringify(this.state.members_email));
+            data.append("options", JSON.stringify(this.state.options_title));
+            Network.PostRequest('http://localhost:3000/createPoll', data).then((res)=>{
+                console.log(res);
+                this.props.history.push({pathname: '/listPage'});
+            });
+        }
+        else{
+            const deleted = this.getChangeElement("addOption","old","none");
+            const added = this.getChangeElement("addOption","new","block");
+            console.log(this.state.title, this.state.description, "-> ",deleted, added);
+        }
     }
 
     render() {
         return (
             <div className="body-add-poll">
                 <DefaultNavbar/>
-                <TitleComponent title={(this.props.titleComponent)? this.props.titleComponent :"اضافه کردن نظرسنجی جدید"}/>
+                <TitleComponent title={(this.state.server === "editPoll")? "ویرایش نظرسنجی" :"اضافه کردن نظرسنجی جدید"}/>
 
                 <div className="container description">
                     <div className="row">
@@ -131,7 +149,7 @@ class HomePage extends Component {
                         <ul id="myUL-addOption"> </ul>
                     </div>
 
-                    <div className="input-box col-md-6">
+                    <div className="input-box col-md-6" style={{"display":(this.props.title)?"none":"block"}}>
                         <div id="myDIV" className="header">
                             <input type="text" id="addMail" placeholder="ایمیل بعدی را وارد کنید..."/>
                             <span onClick={this.addMail} className="addBtn">Add</span>
@@ -143,7 +161,7 @@ class HomePage extends Component {
 
                 </div>
                         <div className="">
-                            <input type="submit" value="ثبت نظرسنجی" onClick={this.submitForm} className="submit add-poll-submit"/>
+                            <input type="submit" value={(this.props.titleComponent)? this.props.titleComponent : "ثبت نظرسنجی"} onClick={this.submitForm} className="submit add-poll-submit"/>
                         </div>
                 </div>
             </div>

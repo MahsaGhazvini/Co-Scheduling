@@ -48,7 +48,7 @@ class ManagePolls extends Component {
     render() {
         if(this.state.title)
         return (
-            <AddPoll title={this.state.title} description={this.state.description} options={this.state.options}/>
+            <AddPoll title={this.state.title} description={this.state.description} options={this.state.options} server={"editPoll"}/>
             // <AddPoll pollsInfo={this.state.activatePollsInfo} message={"برای ورود به صفحه‌ی هر نظرسنجی فعال روی آن کلیک کنید"} server={'vote'}/>
             // {/*<div id="managePolls-view">*/}
             //     {/*<DefaultNavbar/>*/}
