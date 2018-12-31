@@ -11,9 +11,9 @@ import Vote from './Vote/Vote';
 import ManagePolls from './ManagePolls/ManagePolls';
 
 
-// import { library } from './../../node_modules/@fortawesome/fontawesome-svg-core';
-// import { faEnvelope, faKey, faEdit, faPen } from './../../node_modules/@fortawesome/free-solid-svg-icons';
-// library.add(faEnvelope, faKey, faEdit, faPen);
+import { library } from './../node_modules/@fortawesome/fontawesome-svg-core';
+import { faEnvelope, faKey, faEdit, faPen, faComments } from './../node_modules/@fortawesome/free-solid-svg-icons';
+library.add(faEnvelope, faKey, faEdit, faPen, faComments);
 
 const App = () =>
     <Router>

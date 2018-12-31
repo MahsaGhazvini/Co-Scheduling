@@ -3,7 +3,6 @@ import DefaultNavbar from '../Common/DefaultNavbar';
 import TitleComponent from '../Common/TitleComponent';
 import './../Styles/common.css';
 import './../Styles/login.css';
-import Footer from "../Common/Footer";
 
 class HomePage extends Component {
     constructor(props){
@@ -39,11 +38,11 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer/>
             </div>
         );
     }
 }
 
 export default HomePage;
+
 

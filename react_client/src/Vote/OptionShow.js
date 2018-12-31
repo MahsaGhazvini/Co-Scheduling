@@ -4,6 +4,7 @@ import * as Network from './../Common/RequestMaker';
 
 /*import {FontAwesomeIcon} from './../../node_modules/@fortawesome/react-fontawesome';*/
 //import Popup from './../../node_modules/reactjs-popup';
+import {FontAwesomeIcon} from './../../node_modules/@fortawesome/react-fontawesome';
 
 import Modal from './../../node_modules/react-modal';
 
@@ -83,14 +84,19 @@ class OptionShow extends Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="col-md-12">
-                                    <input id={"notVoted"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="notVoted" onChange={this.handleRadioChange} className="input"/><span className="white-color radio-box">بدون نظر</span>
-                                    {/*<Popup trigger={<button> Trigger</button>} position="right center">
-                                        <div>Popup content here !!</div>
-                                    </Popup>
-                                    <button className="float-left" onclick={this.showCommentBox}>نظر</button>
-                                    <button>نظرات</button>*/}
-                                    <div>
-                                        <button onClick={this.openModal} className="sage-button btn">نظرات</button>
+                                    <div className="col-md-6 float-right">
+                                    <input id={"notVoted"+this.props.option.id} type="radio"
+                                           name={"ourVote"+this.props.option.id} value="notVoted"
+                                           onChange={this.handleRadioChange} className="input"/>
+                                        <span className="white-color radio-box">بدون نظر</span>
+                                    </div>
+                                    <div className="col-md-6 float-left">
+                                        <div onClick={this.openModal} className="float-left text-left">
+                                        <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
+                                            icon="comments"
+                                        />
+                                        </div>
+                                       {/* <button onClick={this.openModal} className="sage-button btn float-left">نظرات</button>*/}
                                         <Modal
                                             isOpen={this.state.modalIsOpen}
                                             onAfterOpen={this.afterOpenModal}
@@ -139,14 +145,49 @@ class OptionShow extends Component {
                                     </div>
                                 </div>
                                 <div className="col-md-12">
-                                    <input id={"maybe"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="maybe" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">شاید بتوانم</span>
+                                    <div className="col-md-6 float-right">
+                                        <input id={"maybe"+this.props.option.id} type="radio"
+                                               name={"ourVote"+this.props.option.id} value="maybe"
+                                               onChange={this.handleRadioChange}  className="input"/>
+                                        <span className="white-color radio-box">شاید بتوانم</span>
+                                    </div>
+                                    <div className="col-md-6 float-left">
+                                        <div onClick={this.openModal} className="float-left text-left">
+                                            <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
+                                                             icon="comments"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="col-md-12">
-                                    <input id={"agree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="agree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">می‌توانم</span>
+                                    <div className="col-md-6 float-right">
+                                        <input id={"agree"+this.props.option.id} type="radio"
+                                               name={"ourVote"+this.props.option.id} value="agree"
+                                               onChange={this.handleRadioChange}  className="input"/>
+                                        <span className="white-color radio-box">می‌توانم</span>
+                                    </div>
+                                    <div className="col-md-6 float-left">
+                                        <div onClick={this.openModal} className="float-left text-left">
+                                            <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
+                                                             icon="comments"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className="col-md-12">
-                                    {/*<FontAwesomeIcon icon="pen"/>*/}
-                                    <input id={"disagree"+this.props.option.id} type="radio" name={"ourVote"+this.props.option.id} value="disagree" onChange={this.handleRadioChange}  className="input"/><span className="white-color radio-box">نمی‌توانم</span>
+                                    <div className="col-md-6 float-right">
+                                        <input id={"disagree"+this.props.option.id} type="radio"
+                                               name={"ourVote"+this.props.option.id} value="disagree"
+                                               onChange={this.handleRadioChange}  className="input"/>
+                                        <span className="white-color radio-box">نمی‌توانم</span>
+                                    </div>
+                                    <div className="col-md-6 float-left">
+                                        <div onClick={this.openModal} className="float-left text-left">
+                                            <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
+                                                             icon="comments"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
