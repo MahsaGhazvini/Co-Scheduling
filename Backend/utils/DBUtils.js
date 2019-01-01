@@ -5,6 +5,8 @@ var Vote = require('../models/Vote');
 var User = require('../models/User');
 var CommentOption = require('../models/CommentOption');
 var ReplyComment = require('../models/ReplyComment');
+var Sequelize = require('sequelize');
+var Op = Sequelize.Op;
 
 async function createUser(email) {
     const user = await User.findOne(
@@ -49,6 +51,22 @@ async function createPollOption(option, poll) {
     return await PollOption.create({
         description: option.title,
         pollFormId: poll.id
+    });
+}
+
+async function selectListOfOptions(list, pollName){
+    return await PollOption.findAll({
+        where: {
+            description: {
+                [Op.or]: list,
+            }
+        },
+        include: {
+            model: PollForm,
+            where: {
+                title: pollName
+            }
+        }
     });
 }
 
@@ -104,4 +122,5 @@ module.exports = {
     getAllVotes: getAllVotes,
     createCommentOption: createCommentOption,
     createReplyComment: createReplyComment,
+    selectListOfOptions, selectListOfOptions
 };
