@@ -24,11 +24,12 @@ router.post('/', async function createPoll(req, res){
         addedOptions = req.body.addedOptions;
         deletedOptions = req.body.deletedOptions;
     }
+    const formId = req.body.formId;
     const title = req.body.title;
     const description = req.body.description;
     const email = req.body.editorMail;
 
-    console.log("*********",title, description, email);
+    console.log("*********",formId, title, description, email);
     const poll = await pollForm.findOne({
         where:{title: title}
         });

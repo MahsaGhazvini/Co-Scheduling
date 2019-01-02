@@ -43,6 +43,7 @@ class ManagePolls extends Component {
         const added = this.getChangeElement("addOption","new","block");
         console.log(this.state.title, this.state.description, "-> ",deleted, added);
         let data = new URLSearchParams();
+        data.append("formId",this.state.formId);
         data.append("title", this.getValue("title"));
         data.append("description", this.getValue("description"));
         data.append("deletedOptions", JSON.stringify(deleted));
