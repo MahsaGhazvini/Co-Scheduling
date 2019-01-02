@@ -25,22 +25,16 @@ router.post('/', async function createPoll(req, res){
         deletedOptions = req.body.deletedOptions;
     }
     const title = req.body.title;
+    const description = req.body.description;
+    const email = req.body.editorMail;
+
+    console.log("*********",title, description, email);
     const poll = await pollForm.findOne({
         where:{title: title}
         });
     const pollId = poll.get("id");
 
     for (let j = 0; j < deletedOptions.length; j++) {
-        await vote.destroy({
-            where: {},
-            include: {
-                model: pollOption,
-                where: {
-                    description: deletedOptions[j],
-                    pollFormId: pollId
-                }
-            }
-        });
         await pollOption.destroy({
             where: {
                 description: deletedOptions[j],
@@ -49,16 +43,11 @@ router.post('/', async function createPoll(req, res){
         });
     }
 
-    const pollMembers = await findMembers(pollId);
-    const voteRights_promise = Promise.all(pollMembers.map(
-        async member =>
-            await votingRight.findAll({
-                where: {
-                    userId: member,
-                    pollFormId: pollId
-                }
-            })
-    ));
+    const voteRights_promise = votingRight.findAll({
+        where: {
+            pollFormId: pollId
+        }
+    });
     const options_promise = Promise.all(addedOptions.map(
         async option =>
             await DBUtils.createPollOption({title: option}, {id: pollId})
@@ -74,8 +63,8 @@ router.post('/', async function createPoll(req, res){
         })
     });
 
-    if(addedOptions.length !== 0 || deletedOptions.length !==0)
-        mail(pollMembers.toString(), "edit", );
+    // if(addedOptions.length !== 0 || deletedOptions.length !==0)
+    //     mail(pollMembers.toString(), "edit", );
 
     return res.status(200).json({'message':'successful'});
 });

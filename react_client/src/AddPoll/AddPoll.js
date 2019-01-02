@@ -123,6 +123,7 @@ class HomePage extends Component {
             data.append("description", this.state.description);
             data.append("deletedOptions", JSON.stringify(deleted));
             data.append("addedOptions", JSON.stringify(added));
+            data.append("editorMail", localStorage.getItem("email"));
             Network.PostRequest('http://localhost:3000/editPoll', data).then((res)=>{
                 console.log(res);
                 this.props.history.push({pathname: '/listPage'});
