@@ -20,6 +20,11 @@
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.submit:active{
+.submit:active {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+#comment-button{
+    height: 30px;
+    margin: 30px;
 }

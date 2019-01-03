@@ -17,7 +17,7 @@ const customStyles = {
         bottom                : 'auto',
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
-        height                : '400px',
+        height                : '700px',
         width                 : '75%'
     }
 };
@@ -32,15 +32,16 @@ class OptionShow extends Component {
             comments: [],
             modalIsOpen: false,
             replyBox: false,
-            addReply : false
+            addReply : false,
+            newComment: ""
         };
         // radio.value(props.option.ourChoice);
         this.handleRadioChange = this.handleRadioChange.bind(this);
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
-        // this.showReplyBox = this.showReplyBox.bind(this);
-        // this.showAddReplyBox = this.showAddReplyBox.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.addNewComment = this.addNewComment.bind(this);
     }
 
     async componentWillMount(){
@@ -69,6 +70,18 @@ class OptionShow extends Component {
         })
     }
 
+    addNewComment(event){
+        let data = new URLSearchParams();
+        data.append("owner", localStorage.getItem("email"));
+        data.append("content", this.state.newComment);
+        data.append("optionId", this.state.optionId);
+        Network.PostRequest('http://localhost:3000/comment/addComment', data).then((res)=>{
+            console.log(res);
+        });
+        this.setState({newComment: ""});
+        this.componentWillMount();
+    }
+
     handleRadioChange(event){
         this.setState({outVote: event.target.value});
         const email = localStorage.getItem("email");
@@ -91,6 +104,11 @@ class OptionShow extends Component {
         this.setState({modalIsOpen: false});
     }
 
+    handleChange(event) {
+        this.setState({[event.target.name]: event.target.value});
+    }
+
+
     render() {
         const comment_items = [];
         for(let i=0;i<this.state.comments.length;i++){
@@ -104,12 +122,14 @@ class OptionShow extends Component {
                     <div className={"card h-100 poll-box"}>
                         <div className="card-body row">
                             <div className="card-body line">{this.props.option.description}
+
                                 <div className="col-md-6 float-left">
                                     <div onClick={this.openModal} className="float-left text-left">
                                         <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
                                                          icon="comments"
                                         />
                                     </div>
+
                                     <Modal
                                         isOpen={this.state.modalIsOpen}
                                         onAfterOpen={this.afterOpenModal}
@@ -120,10 +140,15 @@ class OptionShow extends Component {
                                         <div className="col-md-12" style={{"margin-bottom":"25px"}}>
 
                                             <button onClick={this.closeModal} className="float-left sage-button" >&times;</button>
+                                            <div className="row">
+                                                <form className="text-area">
+                                                    <textarea onChange={this.handleChange} name="newComment" value={this.state.newComment} rows="4" cols="60" placeholder="نظر جدید ..."></textarea>
+                                                </form>
+                                                <button className="sage-button" onClick={this.addNewComment} id="comment-button">افزودن نظر</button>
+                                            </div>
                                             <h2 ref={subtitle => this.subtitle = subtitle}>نظرات</h2>
-
-
                                         </div>
+
                                         {comment_items}
 
                                     </Modal>
@@ -148,13 +173,6 @@ class OptionShow extends Component {
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">شاید بتوانم</span>
                                     </div>
-                                    {/*<div className="col-md-6 float-left">*/}
-                                        {/*<div onClick={this.openModal} className="float-left text-left">*/}
-                                            {/*<FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}*/}
-                                                             {/*icon="comments"*/}
-                                            {/*/>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
                                 </div>
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
@@ -163,13 +181,6 @@ class OptionShow extends Component {
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">می‌توانم</span>
                                     </div>
-                                    {/*<div className="col-md-6 float-left">*/}
-                                        {/*<div onClick={this.openModal} className="float-left text-left">*/}
-                                            {/*<FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}*/}
-                                                             {/*icon="comments"*/}
-                                            {/*/>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
                                 </div>
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
@@ -178,13 +189,6 @@ class OptionShow extends Component {
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">نمی‌توانم</span>
                                     </div>
-                                    {/*<div className="col-md-6 float-left">*/}
-                                        {/*<div onClick={this.openModal} className="float-left text-left">*/}
-                                            {/*<FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}*/}
-                                                             {/*icon="comments"*/}
-                                            {/*/>*/}
-                                        {/*</div>*/}
-                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
