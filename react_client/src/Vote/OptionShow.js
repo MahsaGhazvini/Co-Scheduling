@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import {withRouter} from 'react-router';
 import * as Network from './../Common/RequestMaker';
 
-/*import {FontAwesomeIcon} from './../../node_modules/@fortawesome/react-fontawesome';*/
-//import Popup from './../../node_modules/reactjs-popup';
-import {FontAwesomeIcon} from './../../node_modules/@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import CommentShow from './CommentShow';
 
 import Modal from './../../node_modules/react-modal';
@@ -123,7 +121,6 @@ class OptionShow extends Component {
                                                          icon="comments"
                                         />
                                     </div>
-
                                     <Modal
                                         isOpen={this.state.modalIsOpen}
                                         onAfterOpen={this.afterOpenModal}
