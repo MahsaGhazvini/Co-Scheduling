@@ -52,16 +52,10 @@ class OptionShow extends Component {
             simpleComments = res;
         });
         const comments_promise = Promise.all(simpleComments.map(async comment=>{
-            const link2 = '/comment/getReplies?email='+email+'&commentId='+comment.id;
-            let res_req;
-            await Network.GetRequest(link2).then(res2=>{
-                res_req = res2;
-            });
             return {
                 commentId: comment.id,
                 owner: comment.owner,
-                content: comment.content,
-                replies: res_req
+                content: comment.content
             }
         }));
         comments_promise.then(comments=>{

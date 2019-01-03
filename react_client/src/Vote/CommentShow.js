@@ -11,12 +11,20 @@ class CommentShow extends Component {
             replyBox: false,
             addReply : false,
             replyMessage: "",
-            reply_items: []
+            replies: []
         };
         this.showReplyBox = this.showReplyBox.bind(this);
         this.showAddReplyBox = this.showAddReplyBox.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.addNewReply = this.addNewReply.bind(this);
+    }
+
+    async componentWillMount(){
+        const email = localStorage.getItem("email");
+        const link = '/comment/getReplies?email='+email+'&commentId='+this.state.comment.commentId;
+        await Network.GetRequest(link).then(res=>{
+            this.setState({replies:res})
+        });
     }
 
     showReplyBox(){
@@ -40,12 +48,14 @@ class CommentShow extends Component {
             console.log(res);
         });
         this.setState({replyMessage: ""});
+        this.componentWillMount();
     }
 
     render() {
-        for(let i=0;i<this.state.comment.replies.length;i++){
-            this.state.reply_items.push(
-                <ReplyShow reply={this.state.comment.replies[i]}/>
+        const reply_items = [];
+        for(let i=0;i<this.state.replies.length;i++){
+            reply_items.push(
+                <ReplyShow reply={this.state.replies[i]}/>
             )
         }
         return (
@@ -58,11 +68,11 @@ class CommentShow extends Component {
                     {this.state.comment.content}
                 </div>
                 <button className="sage-button" style={{margin:"10px"}} onClick={this.showAddReplyBox}>افزودن پاسخ</button>
-                <button className="sage-button" style={{margin:"10px", display: this.state.comment.replies.length ? 'inline' : 'none'}} onClick={this.showReplyBox}>پاسخ ها</button>
+                <button className="sage-button" style={{margin:"10px", display: this.state.replies.length ? 'inline' : 'none'}} onClick={this.showReplyBox}>پاسخ ها</button>
 
 
                 <div style={{display: this.state.replyBox ? 'block' : 'none' }}>
-                    {this.state.reply_items}
+                    {reply_items}
                 </div>
 
                 <div className="col-md-12" style={{display: this.state.addReply ? 'block' : 'none' }}>
