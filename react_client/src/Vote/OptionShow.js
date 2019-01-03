@@ -27,20 +27,45 @@ class OptionShow extends Component {
         console.log(props.option);
         this.state = {
             ourVote: props.option.ourChoice,
+            optionId: props.option.id,
+            comments: [],
             modalIsOpen: false,
             replyBox: false,
             addReply : false
         };
         // radio.value(props.option.ourChoice);
         this.handleRadioChange = this.handleRadioChange.bind(this);
-
-
-
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.showReplyBox = this.showReplyBox.bind(this);
         this.showAddReplyBox = this.showAddReplyBox.bind(this);
+    }
+
+    async componentWillMount(){
+        const email = localStorage.getItem("email");
+        const link = '/comment/getComments?email='+email+'&optionId='+this.state.optionId;
+        let simpleComments=[]
+        await Network.GetRequest(link).then(async (res)=>{
+            simpleComments = res;
+        });
+        const comments_promise = Promise.all(simpleComments.map(async comment=>{
+            const link2 = '/comment/getReplies?email='+email+'&commentId='+comment.id;
+            let res_req;
+            await Network.GetRequest(link2).then(res2=>{
+                res_req = res2;
+            });
+            return {
+                commentId: comment.id,
+                owner: comment.owner,
+                content: comment.content,
+                replies: res_req
+            }
+        }));
+        comments_promise.then(comments=>{
+            this.setState({comments: comments});
+            console.log(this.state.comments);
+        })
     }
 
     handleRadioChange(event){

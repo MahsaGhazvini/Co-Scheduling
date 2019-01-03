@@ -19,8 +19,7 @@ router.get('/', async function(req, res, next) {
     if(permissions){
         let replies = await Replies.findAll({
             where: {
-                commentId: comment,
-                replyTo: reply
+                commentId: comment
             }
         });
         replies = await replies.map(reply => {
@@ -33,7 +32,9 @@ router.get('/', async function(req, res, next) {
         });
         res.status(200).json(replies);
     }
-    res.status(400).json({'message': 'failed'});
+    else{
+        res.status(400).json({'message': 'failed'});
+    }
 });
 
 module.exports = router;
