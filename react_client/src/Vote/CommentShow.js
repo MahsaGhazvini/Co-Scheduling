@@ -21,6 +21,7 @@ class CommentShow extends Component {
         this.addNewReply = this.addNewReply.bind(this);
         this.setReply = this.setReply.bind(this);
         this.undoReply = this.undoReply.bind(this);
+        this.findReply = this.findReply.bind(this);
     }
 
     async componentWillMount(){
@@ -63,15 +64,23 @@ class CommentShow extends Component {
     }
 
     setReply(reply){
-        console.log("set Reply",reply.id);
         this.setState({replyTo: reply});
+    }
+
+    findReply(replyId){
+        for(let i=0;i<this.state.replies.length;i++) {
+            if (this.state.replies[i].id === replyId)
+                return this.state.replies[i].content;
+        }
+        return ":|";
     }
 
     render() {
         const reply_items = [];
         for(let i=0;i<this.state.replies.length;i++){
             reply_items.push(
-                <ReplyShow reply={this.state.replies[i]} onReply={(reply)=>this.setReply(reply)}/>
+                <ReplyShow reply={this.state.replies[i]} onReply={(reply)=>this.setReply(reply)}
+                           replyTo={(this.state.replies[i].replyTo) ? this.findReply(this.state.replies[i].replyTo) : null}/>
             )
         }
         return (

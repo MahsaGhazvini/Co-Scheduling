@@ -18,6 +18,16 @@ class ReplyShow extends Component {
     render() {
         return (
             <div className="reply-box">
+                <div style={{display: (this.state.reply.replyTo) ? 'block':'none'}}>
+                    <div className="row" style={{color:"rgb(137, 154, 99)", "font-size": "12px"}}>
+                        <FontAwesomeIcon style={{cursor: "pointer","margin-right": "50px", "margin-left": "30px"}}
+                                         icon="reply"
+                        />
+                        <div id="reply-show">
+                            {(this.state.reply.replyTo)? this.props.replyTo: ""}
+                        </div>
+                    </div>
+                </div>
                 <div className="sage-color">
                     کاربر:
                     {this.state.reply.owner}

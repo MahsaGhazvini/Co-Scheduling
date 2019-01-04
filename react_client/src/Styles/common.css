@@ -164,3 +164,11 @@ div.card.h-100.poll-box{
     font-size:14px;
     margin-right:65px;
 }
+
+#reply-show{
+    white-space: nowrap;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:10px;
+}
