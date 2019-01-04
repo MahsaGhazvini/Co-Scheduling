@@ -154,3 +154,13 @@ div.card.h-100.poll-box{
 .text-area{
     margin: 2%;
 }
+
+#reply-text{
+    white-space: nowrap;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #747d7b;
+    font-size:14px;
+    margin-right:65px;
+}

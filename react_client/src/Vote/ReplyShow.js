@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 class ReplyShow extends Component {
     constructor(props){
@@ -7,6 +8,11 @@ class ReplyShow extends Component {
         this.state = {
             reply: props.reply
         };
+        this.handleReply = this.handleReply.bind(this);
+    }
+
+    handleReply(){
+        this.props.onReply(this.state.reply);
     }
 
     render() {
@@ -17,6 +23,11 @@ class ReplyShow extends Component {
                     {this.state.reply.owner}
                 </div>
                 {this.state.reply.content}
+                <div onClick={this.handleReply} className="float-left text-left">
+                    <FontAwesomeIcon style={{color:"rgb(137, 154, 99)",cursor: "pointer"}}
+                                     icon="reply"
+                    />
+                </div>
             </div>)
     }
 }
