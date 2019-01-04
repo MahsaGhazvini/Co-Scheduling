@@ -4,7 +4,6 @@ const router = express.Router();
 const mail = require('../../services/sendingEmail');
 const pollOption = require('../../models/PollOption');
 const pollForm = require('../../models/PollForm');
-const vote = require('../../models/Vote');
 const votingRight = require('../../models/VotingRight');
 
 router.post('/', async function createPoll(req, res){
@@ -16,58 +15,75 @@ router.post('/', async function createPoll(req, res){
         return await votingRights.map(votingRight => votingRight.dataValues.userId);
     };
 
-    let addedOptions, deletedOptions;
-    try {
-        addedOptions = JSON.parse(req.body.addedOptions);
-        deletedOptions = JSON.parse(req.body.deletedOptions);
-    }catch(e){
-        addedOptions = req.body.addedOptions;
-        deletedOptions = req.body.deletedOptions;
-    }
-    const formId = req.body.formId;
+    const pollId = req.body.formId;
     const title = req.body.title;
     const description = req.body.description;
     const email = req.body.editorMail;
 
-    console.log("*********",formId, title, description, email);
-    const poll = await pollForm.findOne({
-        where:{title: title}
-        });
-    const pollId = poll.get("id");
+    const creator = await pollForm.findOne({
+        where: {
+            id: pollId,
+            creator: email
+        }
+    });
 
-    for (let j = 0; j < deletedOptions.length; j++) {
-        await pollOption.destroy({
+    if(creator) {
+        pollForm.update({
+            title: title,
+            description: description
+        },
+        {
             where: {
-                description: deletedOptions[j],
+                id: pollId
+            }
+        });
+
+        let addedOptions, deletedOptions;
+        try {
+            addedOptions = JSON.parse(req.body.addedOptions);
+            deletedOptions = JSON.parse(req.body.deletedOptions);
+        } catch (e) {
+            addedOptions = req.body.addedOptions;
+            deletedOptions = req.body.deletedOptions;
+        }
+
+        for (let j = 0; j < deletedOptions.length; j++) {
+            await pollOption.destroy({
+                where: {
+                    description: deletedOptions[j],
+                    pollFormId: pollId
+                }
+            });
+        }
+
+        const voteRights_promise = votingRight.findAll({
+            where: {
                 pollFormId: pollId
             }
         });
+        const options_promise = Promise.all(addedOptions.map(
+            async option =>
+                await DBUtils.createPollOption({title: option}, {id: pollId})
+        ));
+
+        voteRights_promise.then(voteRights_arr => {
+            options_promise.then(options_arr => {
+                voteRights_arr.forEach(async (voteRight) => {
+                    options_arr.forEach(async (option) => {
+                        await DBUtils.createVote(voteRight, option);
+                    });
+                });
+            })
+        });
+
+        const pollMembers = await findMembers(pollId);
+        if (addedOptions.length !== 0 || deletedOptions.length !== 0)
+            mail(pollMembers.toString(), "edit",);
+
+        return res.status(200).json({'message': 'successful'});
     }
 
-    const voteRights_promise = votingRight.findAll({
-        where: {
-            pollFormId: pollId
-        }
-    });
-    const options_promise = Promise.all(addedOptions.map(
-        async option =>
-            await DBUtils.createPollOption({title: option}, {id: pollId})
-    ));
-
-    voteRights_promise.then(voteRights_arr=>{
-        options_promise.then(options_arr=>{
-            voteRights_arr.forEach(async (voteRight) => {
-                options_arr.forEach(async (option) => {
-                    await DBUtils.createVote(voteRight, option);
-                });
-            });
-        })
-    });
-
-    // if(addedOptions.length !== 0 || deletedOptions.length !==0)
-    //     mail(pollMembers.toString(), "edit", );
-
-    return res.status(200).json({'message':'successful'});
+    return res.status(400).json({'message': 'failed'});
 });
 
 module.exports = router;
