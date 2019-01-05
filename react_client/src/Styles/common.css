@@ -200,3 +200,12 @@ div.card.h-100.poll-box{
     margin-left: 30px;
     font-size: 20px;
 }
+
+#checkmark {
+    margin-right: 15px;
+}
+
+#container-checkmark{
+    color: rgb(126, 128, 76);
+    margin: 30px;
+}

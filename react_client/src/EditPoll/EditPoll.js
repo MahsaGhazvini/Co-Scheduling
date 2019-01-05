@@ -14,11 +14,13 @@ class ManagePolls extends Component {
             options: [],
             active: false,
             description: '',
-            title: ''
+            title: '',
+            openPoll: false
         }
         this.submitForm = this.submitForm.bind(this);
         this.getChangeElement = this.getChangeElement.bind(this);
         this.getValue = this.getValue.bind(this);
+        this.handleCheck = this.handleCheck.bind(this);
     }
 
     getChangeElement(inputName, oldOrNew, display){
@@ -49,6 +51,7 @@ class ManagePolls extends Component {
         data.append("deletedOptions", JSON.stringify(deleted));
         data.append("addedOptions", JSON.stringify(added));
         data.append("editorMail", localStorage.getItem("email"));
+        data.append("openPoll", this.state.openPoll);
         Network.PostRequest('http://localhost:3000/editPoll', data).then((res)=>{
             console.log(res);
             this.props.history.push({pathname: '/listPage'});
@@ -78,12 +81,20 @@ class ManagePolls extends Component {
         });
     }
 
+    handleCheck(){
+        this.setState({openPoll: !this.state.openPoll});
+    }
+
     render() {
         if(this.state.title)
         return (
             <div>
                 <InformationBox title={this.state.title} description={this.state.description} options={this.state.options} server={"editPoll"}/>
                 <div className="container">
+                    <div style={{display: (this.state.active) ? 'none' : 'block'}} id="container-checkmark">
+                        باز شدن مجدد نظرسنجی
+                        <input type="checkbox" id="checkmark" onChange={this.handleCheck} defaultChecked={this.state.openPoll}/>
+                    </div>
                     <input type="submit" value={"اعمال ویرایش"} onClick={this.submitForm} className="submit add-poll-submit"/>
                 </div>
             </div>
