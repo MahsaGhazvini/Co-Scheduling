@@ -19,6 +19,11 @@ router.post('/', async function createPoll(req, res){
     const title = req.body.title;
     const description = req.body.description;
     const email = req.body.editorMail;
+    let openPoll = req.body.openPoll;
+    if(openPoll === 'true')
+        openPoll = true;
+    else if(openPoll === 'false')
+        openPoll = false;
 
     const creator = await pollForm.findOne({
         where: {
@@ -30,13 +35,25 @@ router.post('/', async function createPoll(req, res){
     if(creator) {
         pollForm.update({
             title: title,
-            description: description
+            description: description,
+            active: openPoll
         },
         {
             where: {
                 id: pollId
             }
         });
+
+        if(openPoll){
+            await pollOption.update({
+                isFinalized: false
+            },
+            {
+                where: {
+                    pollFormId: pollId
+                }
+            })
+        }
 
         let addedOptions, deletedOptions;
         try {

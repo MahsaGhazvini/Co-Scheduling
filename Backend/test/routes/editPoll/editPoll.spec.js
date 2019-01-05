@@ -42,7 +42,8 @@ describe('POST /editPoll', function () {
             ],
             title: 'first poll edited',
             description: 'for testING',
-            formId: 2
+            formId: 2,
+            openPoll: true
         };
         request
             .post('/editPoll')
@@ -64,7 +65,8 @@ describe('POST /editPoll', function () {
             ],
             title: 'first poll edited',
             description: 'for testING',
-            formId: 2
+            formId: 2,
+            openPoll: true
         };
         request
             .post('/editPoll')
