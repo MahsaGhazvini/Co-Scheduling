@@ -18,7 +18,8 @@ class ManageOptionShow extends Component {
         let data = new URLSearchParams();
         data.append('email', email);
         Network.PostRequest(URL, data).then((res)=>{
-            console.log('------',res);
+            alert("زمان مورد نظر نهایی شد.");
+            document.location.href = "/listPage";
         });
     }
 

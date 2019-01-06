@@ -6,7 +6,7 @@ class LogoContainer extends Component {
     render() {
         return (
             <div className="logo-container">
-                <a href="/"><img src={logo} alt="LOGO" className="logo"/></a>
+                <a href={(localStorage.getItem("email"))?"/listPage":"/"}><img src={logo} alt="LOGO" className="logo"/></a>
                 <span className="logo-text">سیستم مدیریت جلسات (سمج)</span>
             </div>
         );
