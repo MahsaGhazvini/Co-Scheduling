@@ -34,25 +34,32 @@ router.post('/', async function createPoll(req, res){
 
     if(creator) {
         pollForm.update({
-            title: title,
-            description: description,
-            active: openPoll
-        },
-        {
-            where: {
-                id: pollId
-            }
-        });
-
-        if(openPoll){
-            await pollOption.update({
-                isFinalized: false
+                title: title,
+                description: description
             },
             {
                 where: {
-                    pollFormId: pollId
+                    id: pollId
                 }
-            })
+            });
+
+        if(openPoll){
+            await pollOption.update({
+                    isFinalized: false
+                },
+                {
+                    where: {
+                        pollFormId: pollId
+                    }
+                });
+            await pollForm.update({
+                    active: openPoll
+                },
+                {
+                    where: {
+                        id: pollId
+                    }
+                });
         }
 
         let addedOptions, deletedOptions;
