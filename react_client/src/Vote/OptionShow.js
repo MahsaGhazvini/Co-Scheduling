@@ -75,7 +75,7 @@ class OptionShow extends Component {
     }
 
     handleRadioChange(event){
-        this.setState({outVote: event.target.value});
+        this.setState({ourVote: event.target.value});
         const email = localStorage.getItem("email");
         const URL = '/vote/'+this.props.formId+'/'+this.props.option.id+'/'+event.target.value;
         let data = new URLSearchParams();
@@ -151,7 +151,7 @@ class OptionShow extends Component {
                             <div className="col-md-12">
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
-                                    <input id={"notVoted"+this.props.option.id} type="radio"
+                                    <input id={"notVoted"+this.props.option.id} checked={this.state.ourVote === "notVoted"} type="radio"
                                            name={"ourVote"+this.props.option.id} value="notVoted"
                                            onChange={this.handleRadioChange} className="input"/>
                                         <span className="white-color radio-box">بدون نظر</span>
@@ -159,7 +159,7 @@ class OptionShow extends Component {
                                 </div>
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
-                                        <input id={"maybe"+this.props.option.id} type="radio"
+                                        <input id={"maybe"+this.props.option.id} checked={this.state.ourVote === "maybe"} type="radio"
                                                name={"ourVote"+this.props.option.id} value="maybe"
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">شاید بتوانم</span>
@@ -167,7 +167,7 @@ class OptionShow extends Component {
                                 </div>
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
-                                        <input id={"agree"+this.props.option.id} type="radio"
+                                        <input id={"agree"+this.props.option.id} checked={this.state.ourVote === "agree"} type="radio"
                                                name={"ourVote"+this.props.option.id} value="agree"
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">می‌توانم</span>
@@ -175,7 +175,7 @@ class OptionShow extends Component {
                                 </div>
                                 <div className="col-md-12">
                                     <div className="col-md-6 float-right">
-                                        <input id={"disagree"+this.props.option.id} type="radio"
+                                        <input id={"disagree"+this.props.option.id} checked={this.state.ourVote === "disagree"} type="radio"
                                                name={"ourVote"+this.props.option.id} value="disagree"
                                                onChange={this.handleRadioChange}  className="input"/>
                                         <span className="white-color radio-box">نمی‌توانم</span>
