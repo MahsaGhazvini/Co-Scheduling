@@ -18,6 +18,8 @@ function sendEmail (receivers, service) {
         text = 'A new poll has been created, you can vote now.';
     else if (service === "close")
         text = 'Voting finished, you can see final result now.';
+    else if (service === "edit")
+        text = 'A poll has been edited, you can review it now.';
 
 
     let mailOptions = {
